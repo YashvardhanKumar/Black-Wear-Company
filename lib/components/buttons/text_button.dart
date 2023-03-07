@@ -7,7 +7,8 @@ class CustomFilledButton extends StatefulWidget {
     required this.child,
     required this.onPressed,
     this.height,
-    this.width, this.padding,
+    this.width,
+    this.padding,
   }) : super(key: key);
   final Widget child;
   final VoidCallback? onPressed;
@@ -43,10 +44,13 @@ class _CustomFilledButtonState extends State<CustomFilledButton> {
           height: widget.height,
           width: widget.width,
           padding: widget.padding,
-          alignment: (widget.width == double.infinity) ? Alignment.center : null,
+          alignment:
+              (widget.width == double.infinity) ? Alignment.center : null,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: (widget.onPressed != null) ? Colors.black : Colors.black.withOpacity(0.5),
+            color: (widget.onPressed != null)
+                ? Colors.black
+                : Colors.black.withOpacity(0.5),
           ),
           child: widget.child,
         ),
@@ -95,7 +99,8 @@ class _CustomTextButtonState extends State<CustomTextButton> {
         child: Container(
           height: widget.height,
           width: widget.width,
-          alignment: (widget.width == double.infinity) ? Alignment.center : null,
+          alignment:
+              (widget.width == double.infinity) ? Alignment.center : null,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -146,10 +151,14 @@ class _CustomOutlineButtonState extends State<CustomOutlineButton> {
         child: Container(
           height: widget.height,
           width: widget.width,
-          alignment: (widget.width == double.infinity) ? Alignment.center : null,
+          alignment:
+              (widget.width == double.infinity) ? Alignment.center : null,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: const Color(0xFF2972FE), width: 1.5),
+            border: Border.all(
+              color: Color(0xff595757),
+              width: 1.5,
+            ),
           ),
           child: widget.child,
         ),

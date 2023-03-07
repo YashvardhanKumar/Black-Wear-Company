@@ -120,44 +120,7 @@ class _IntroPageState extends State<IntroPage> {
                               itemCount: 3,
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 10,
-                                width: 10,
-                                margin: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: (nextClickedNo == 1)
-                                      ? Colors.black
-                                      : Colors.black.withOpacity(0.5),
-                                ),
-                              ),
-                              Container(
-                                height: 10,
-                                width: 10,
-                                margin: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: (nextClickedNo == 2)
-                                      ? Colors.black
-                                      : Colors.black.withOpacity(0.5),
-                                ),
-                              ),
-                              Container(
-                                height: 10,
-                                width: 10,
-                                margin: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: (nextClickedNo == 3)
-                                      ? Colors.black
-                                      : Colors.black.withOpacity(0.5),
-                                ),
-                              ),
-                            ],
-                          ),
+                          DotIndicator(nextClickedNo: nextClickedNo, itemCount: 3,),
                           CustomFilledButton(
                             padding: const EdgeInsets.all(15.0),
                             width: double.infinity,
@@ -191,6 +154,42 @@ class _IntroPageState extends State<IntroPage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class DotIndicator extends StatelessWidget {
+  const DotIndicator({
+    super.key,
+    required this.nextClickedNo, required this.itemCount,
+  });
+
+  final int nextClickedNo;
+  final int itemCount;
+
+  List<Widget> dots() {
+    List<Widget> dot = [];
+    for(int i = 1; i <= itemCount; i++) {
+      dot.add(Container(
+        height: 10,
+        width: 10,
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: (nextClickedNo == i)
+              ? Colors.black
+              : Colors.black.withOpacity(0.5),
+        ),
+      ));
+    }
+    return dot;
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: dots(),
     );
   }
 }

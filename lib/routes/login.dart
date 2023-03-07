@@ -1,4 +1,6 @@
 import 'package:bfm/components/buttons/text_button.dart';
+import 'package:bfm/components/custom_page_route.dart';
+import 'package:bfm/routes/verify_number.dart';
 import 'package:flutter/material.dart';
 
 import '../components/custom_app_bar.dart';
@@ -146,7 +148,9 @@ class _LoginPageState extends State<LoginPage> {
                   'Continue',
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, CustomPageRoute(child: VerifyNumberPage()));
+                },
               ),
             ],
           ),

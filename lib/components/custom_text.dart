@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomText extends StatelessWidget {
+class CustomText extends Text {
   const CustomText(
       this.text, {
         super.key,
@@ -11,7 +11,7 @@ class CustomText extends StatelessWidget {
         this.overflow,
         this.maxLines,
         this.textAlign,
-      });
+      }) : super(text);
 
   final FontWeight? fontWeight;
   final double? fontSize, height;
