@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomFilledButton extends StatefulWidget {
@@ -47,7 +46,7 @@ class _CustomFilledButtonState extends State<CustomFilledButton> {
           alignment:
               (widget.width == double.infinity) ? Alignment.center : null,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
             color: (widget.onPressed != null)
                 ? Colors.black
                 : Colors.black.withOpacity(0.5),
@@ -102,7 +101,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
           alignment:
               (widget.width == double.infinity) ? Alignment.center : null,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
           ),
           child: widget.child,
         ),
@@ -118,11 +117,15 @@ class CustomOutlineButton extends StatefulWidget {
     required this.onPressed,
     this.height,
     this.width,
+    this.borderWidth,
+    this.borderColor,
   }) : super(key: key);
   final Widget child;
   final VoidCallback? onPressed;
   final double? height;
   final double? width;
+  final double? borderWidth;
+  final Color? borderColor;
 
   @override
   State<CustomOutlineButton> createState() => _CustomOutlineButtonState();
@@ -154,10 +157,10 @@ class _CustomOutlineButtonState extends State<CustomOutlineButton> {
           alignment:
               (widget.width == double.infinity) ? Alignment.center : null,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
             border: Border.all(
-              color: Color(0xff595757),
-              width: 1.5,
+              color: widget.borderColor ?? Color(0xff595757),
+              width: widget.borderWidth ?? 1.5,
             ),
           ),
           child: widget.child,

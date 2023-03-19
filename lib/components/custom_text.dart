@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 
 class CustomText extends Text {
   const CustomText(
-      this.text, {
-        super.key,
-        this.fontWeight,
-        this.fontSize,
-        this.color,
-        this.height,
-        this.overflow,
-        this.maxLines,
-        this.textAlign,
-      }) : super(text);
-
+    this.text, {
+    super.key,
+    this.fontWeight,
+    this.fontSize,
+    this.color,
+    this.height,
+    this.overflow,
+    this.maxLines,
+    this.textAlign,
+  }) : super(text);
   final FontWeight? fontWeight;
   final double? fontSize, height;
   final Color? color;

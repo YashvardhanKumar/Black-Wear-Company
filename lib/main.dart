@@ -3,6 +3,7 @@ import 'package:bfm/routes/intro_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -31,13 +32,15 @@ class LogoPage extends StatefulWidget {
 }
 
 class _LogoPageState extends State<LogoPage> {
-
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2),() => {
-      Navigator.pushReplacement(context, CustomPageRoute(child: IntroPage()))
-    });
+    Future.delayed(
+        Duration(seconds: 2),
+        () => {
+              Navigator.pushReplacement(
+                  context, CustomPageRoute(child: IntroPage()))
+            });
   }
 
   @override
