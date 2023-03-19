@@ -2,6 +2,7 @@ import 'package:bfm/components/custom_app_bar.dart';
 import 'package:bfm/components/custom_page_route.dart';
 import 'package:bfm/components/custom_text.dart';
 import 'package:flutter/material.dart';
+
 import '../components/buttons/icon_button.dart';
 import '../components/buttons/text_button.dart';
 import 'login pages/login.dart';
@@ -17,12 +18,12 @@ class _IntroPageState extends State<IntroPage> {
   int nextClickedNo = 1;
   PageController controller = PageController();
   List<String> title = [
-    'The World\'s largest digital marketplace for NFT E-commerce',
+    'The World’s largest digital marketplace for NFT E-commerce',
     'Secure your digital assets with the best one',
     'Provides a variety of cryptocurrency wallet'
   ];
   List<String> description = [
-    'The World\'s largest digital marketplace for crypto '
+    'The World’s largest digital marketplace for crypto '
         'collectibles and non-fungible tokens. '
         'Buy, sell, and discover exclusive digital items.',
     'Baruna has partnered with some notable companies and '
@@ -63,7 +64,8 @@ class _IntroPageState extends State<IntroPage> {
         actions: [
           CustomTextButton(
             onPressed: () {
-              Navigator.push(context, CustomPageRoute(child: LoginPage()));
+              Navigator.push(
+                  context, CustomPageRoute(child: LoginPage()));
             },
             child: CustomText(
               'Skip',
@@ -89,67 +91,68 @@ class _IntroPageState extends State<IntroPage> {
                   SizedBox(
                     height: height * 0.5,
                   ),
-                  Container(
-                    height: height - (height * 0.5),
-                    width: size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(32),
-                      color: Colors.white,
-                    ),
-                    child: Container(
-                      margin: EdgeInsets.all(20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          SizedBox(
-                            height: 200,
-                            child: PageView.builder(
-                              controller: controller,
-                              onPageChanged: (value) {
-                                nextClickedNo = value + 1;
-                                setState(() {});
-                              },
-                              itemBuilder: (context, i) {
-                                return IntroTextsSlider(
-                                  title: title[i],
-                                  description: description[i],
-                                );
-                              },
-                              itemCount: 3,
-                            ),
-                          ),
-                          DotIndicator(
-                            nextClickedNo: nextClickedNo,
-                            itemCount: 3,
-                          ),
-                          CustomFilledButton(
-                            padding: const EdgeInsets.all(15.0),
-                            width: double.infinity,
-                            child: CustomText(
-                              'Next',
-                              color: Colors.white,
-                            ),
-                            onPressed: () {
-                              if (nextClickedNo < 3) {
-                                controller.animateToPage(
-                                  nextClickedNo++,
-                                  duration: const Duration(milliseconds: 400),
-                                  curve: Curves.easeOut,
-                                );
-                              } else if (nextClickedNo == 3) {
-                                Navigator.push(
-                                  context,
-                                  CustomPageRoute(child: LoginPage()),
-                                );
-                              }
-                              setState(() {});
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+
                 ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomSheet: Container(
+        // height: height - (height * 0.5),
+        width: size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(32),
+          color: Colors.white,
+        ),
+        child: Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SizedBox(
+                height: 200,
+                child: PageView.builder(
+                  controller: controller,
+                  onPageChanged: (value) {
+                    nextClickedNo = value + 1;
+                    setState(() {});
+                  },
+                  itemBuilder: (context, i) {
+                    return IntroTextsSlider(
+                      title: title[i],
+                      description: description[i],
+                    );
+                  },
+                  itemCount: 3,
+                ),
+              ),
+              SizedBox(height: 20,),
+              DotIndicator(nextClickedNo: nextClickedNo, itemCount: 3,),
+              SizedBox(height: 20,),
+              CustomFilledButton(
+                padding: const EdgeInsets.all(15.0),
+                width: double.infinity,
+                child: CustomText(
+                  'Next',
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  if (nextClickedNo < 3) {
+                    controller.animateToPage(
+                      nextClickedNo++,
+                      duration: const Duration(milliseconds: 400),
+                      curve: Curves.easeOut,
+                    );
+                  } else if (nextClickedNo == 3) {
+                    Navigator.push(
+                      context,
+                      CustomPageRoute(child: LoginPage()),
+                    );
+                  }
+                  setState(() {});
+                },
               ),
             ],
           ),
@@ -162,8 +165,7 @@ class _IntroPageState extends State<IntroPage> {
 class DotIndicator extends StatelessWidget {
   const DotIndicator({
     super.key,
-    required this.nextClickedNo,
-    required this.itemCount,
+    required this.nextClickedNo, required this.itemCount,
   });
 
   final int nextClickedNo;
@@ -171,14 +173,16 @@ class DotIndicator extends StatelessWidget {
 
   List<Widget> dots() {
     List<Widget> dot = [];
-    for (int i = 1; i <= itemCount; i++) {
+    for(int i = 1; i <= itemCount; i++) {
       dot.add(Container(
         height: 10,
         width: 10,
         margin: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: (nextClickedNo == i) ? Colors.black : Colors.grey.shade300,
+          color: (nextClickedNo == i)
+              ? Colors.black
+              : Colors.black.withOpacity(0.5),
         ),
       ));
     }
