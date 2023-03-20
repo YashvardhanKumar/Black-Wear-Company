@@ -5,32 +5,34 @@ import 'nft%20store%20page/store_page.dart';
 import 'package:flutter/material.dart';
 import '../../../components/bottom_nav_bar.dart';
 import 'home page of e commerce/home_page.dart';
+
 class CommonPage extends StatefulWidget {
   const CommonPage({Key? key}) : super(key: key);
 
   @override
   State<CommonPage> createState() => _CommonPageState();
 }
-  class _CommonPageState extends State<CommonPage> {
+
+class _CommonPageState extends State<CommonPage> {
   int idx = 0;
+
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-  bottomNavigationBar: BottomNavBar(
-  onNavIndexChanged: (int value) {
-  idx = value;
-  setState(() {});
-  },
-  onPlusClicked: () {},
-  ),
-  body: SafeArea(
-  child: [
-  HomePage(),
-  StorePage(),
-  NotificationPage(),
-  ProfilePage(),
-  ][idx],
-  ),
-  );
+    return Scaffold(
+      bottomNavigationBar: BottomNavBar(onNavIndexChanged: (int value) {
+        idx = value;
+        setState(() {});
+      }, onPlusClicked: () {
+
+      }),
+      body: SafeArea(
+        child: [
+          HomePage(),
+          StorePage(),
+          NotificationPage(),
+          ProfilePage(),
+        ][idx],
+      ),
+    );
   }
-  }
+}

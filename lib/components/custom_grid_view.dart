@@ -7,11 +7,13 @@ class CustomGridView extends StatelessWidget {
     required this.itemCount,
     required this.itemBuilder,
     this.arrangeAsPerSize = false,
+    this.isSliverType = false,
   });
 
   final int itemCount;
   final Widget Function(BuildContext, int) itemBuilder;
   final bool arrangeAsPerSize;
+  final bool isSliverType;
 
   List<Widget> productRows(BuildContext context) {
     List<Widget> productRowsList = [];
@@ -29,10 +31,15 @@ class CustomGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: productRows(context),
-      ),
+    if (isSliverType) {
+      return SliverList(
+        delegate: SliverChildListDelegate(
+          productRows(context),
+        ),
+      );
+    }
+    return ListView(
+      children: productRows(context),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:bfm/components/custom_icon_icons.dart';
 import 'package:bfm/components/custom_page_route.dart';
 // import 'package:bfm/routes/bottom%20nav%20bar%20screens/nft%20store%20page/show_bid_product.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class NonLiveBiddingTile extends StatelessWidget {
                   padding: const EdgeInsets.all(5),
                   child: CustomIconButton(
                     icon: Icon(
-                      Icons.favorite,
+                      CustomIcon.heart,
                       // size: 12,
                       color: Colors.red.shade800,
                     ),
@@ -55,10 +56,7 @@ class NonLiveBiddingTile extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(
-                      'images/ethereum.png',
-                      height: 18,
-                    ),
+                    Icon(CustomIcon.ethereum,size: 18,),
                     const SizedBox(
                       width: 3,
                     ),

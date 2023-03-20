@@ -55,8 +55,8 @@ class CustomChipsState extends State<CustomChips> {
           child: Container(
             height: widget.height,
             width: widget.width,
-            alignment:
-            (widget.width == double.infinity) ? Alignment.center : null,
+            alignment: Alignment.center,
+            // (widget.width == double.infinity) ? Alignment.center : null,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: widget.selected ? Colors.black : Colors.transparent,

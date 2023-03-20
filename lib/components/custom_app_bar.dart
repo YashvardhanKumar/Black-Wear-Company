@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     this.padding = true,
     this.isLeadingPresent = true,
     this.backgroundColor,
-    this.bottom,
+    this.bottom, this.toolbarHeight,
   }) : super(key: key);
   final Widget? leading;
   final Widget? title;
@@ -25,6 +25,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool isLeadingPresent;
   final Color? backgroundColor;
   final PreferredSizeWidget? bottom;
+  final double? toolbarHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +35,10 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       // SystemChrome.restoreSystemUIOverlays();
     }
     return AppBar(
-      toolbarHeight: 70,
+      toolbarHeight: toolbarHeight ?? 70,
       titleSpacing: 0,
+      elevation: 0,
+      scrolledUnderElevation: 0,
       backgroundColor: isTransparent
           ? Colors.transparent
           : (backgroundColor ?? Colors.white),
