@@ -38,8 +38,10 @@ class CustomGridView extends StatelessWidget {
         ),
       );
     }
-    return ListView(
-      children: productRows(context),
+    return SingleChildScrollView(
+      child: Column(
+        children: productRows(context),
+      ),
     );
   }
 }

@@ -34,7 +34,7 @@ class _StatisticPageState extends State<StatisticPage> {
               // stretch: true,
               surfaceTintColor: Colors.transparent,
               backgroundColor: Colors.white,
-              // titleSpacing: 20,
+              // titleSpacing: 0,
               leadingWidth: 0,
               leading: Container(),
               expandedHeight: 140,
@@ -82,13 +82,10 @@ class _StatisticPageState extends State<StatisticPage> {
                   ),
                 ),
               ),
-              title: const CustomAppBar(
-                isLeadingPresent: false,
-                title: CustomText(
-                  'Statistic',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 30,
-                ),
+              title: CustomText(
+                'Statistic',
+                fontWeight: FontWeight.w600,
+                fontSize: 30,
               ),
               actions: [
                 CustomIconButton(

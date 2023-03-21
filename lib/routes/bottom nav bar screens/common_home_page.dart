@@ -1,4 +1,3 @@
-import 'package:bfm/routes/bottom%20nav%20bar%20screens/create%20nft/create_nft_page.dart';
 import 'notification%20page/notification_page.dart';
 import 'profile%20page/profile_page.dart';
 import 'nft%20store%20page/store_page.dart';
@@ -14,17 +13,26 @@ class CommonPage extends StatefulWidget {
 }
 
 class _CommonPageState extends State<CommonPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   int idx = 0;
 
   @override
   Widget build(BuildContext context) {
+    Size deviceSize = MediaQuery.of(context).size;
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(onNavIndexChanged: (int value) {
-        idx = value;
-        setState(() {});
-      }, onPlusClicked: () {
-
-      }),
+      bottomNavigationBar: BottomNavBar(
+        onNavIndexChanged: (int value) {
+          idx = value;
+          setState(() {});
+        },
+        onPlusClicked: () {},
+        deviceSize: deviceSize,
+      ),
       body: SafeArea(
         child: [
           HomePage(),

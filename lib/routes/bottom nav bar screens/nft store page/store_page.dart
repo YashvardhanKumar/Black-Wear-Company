@@ -84,6 +84,7 @@ class _StorePageState extends State<StorePage> {
               // snap: true,
               // floating: true,
               pinned: true,
+              scrolledUnderElevation: 0,
               // stretch: true,
               surfaceTintColor: Colors.transparent,
               backgroundColor: Colors.white,

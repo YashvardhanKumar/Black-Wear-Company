@@ -73,6 +73,7 @@ class _HomePageState extends State<HomePage> {
               // snap: true,
               // floating: true,
               pinned: true,
+              scrolledUnderElevation: 0,
               // stretch: true,
               surfaceTintColor: Colors.transparent,
               backgroundColor: Colors.white,
