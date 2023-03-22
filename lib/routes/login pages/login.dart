@@ -1,3 +1,5 @@
+import 'package:get_storage/get_storage.dart';
+
 import '../../../components/buttons/text_button.dart';
 import '../../../components/custom_page_route.dart';
 import '../bottom nav bar screens/common_home_page.dart';
@@ -7,6 +9,8 @@ import 'package:flutter/material.dart';
 import '../../components/custom_app_bar.dart';
 import '../../components/custom_text.dart';
 
+final box = GetStorage('UserStatus');
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -15,7 +19,21 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String countryCode = '+91';
   bool isSync = false;
+  final _formKey = GlobalKey<FormState>();
+
+  String? _phoneNumberValidator(String value) {
+    String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = RegExp(pattern);
+    if (value.isEmpty) {
+      return 'Please enter mobile number';
+    }
+    else if (!regExp.hasMatch(value)) {
+      return 'Please enter valid mobile number';
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,21 +41,25 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.white,
       appBar: CustomAppBar(
         actions: [
-          CustomTextButton(
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: CustomText(
-                'Skip for now',
-                fontSize: 16,
+          if (!box.read('isAnonymous')!)
+            CustomTextButton(
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: CustomText(
+                  'Skip for now',
+                  fontSize: 16,
+                ),
               ),
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                CustomPageRoute(child: const CommonPage()),
-              );
-            },
-          )
+              onPressed: () {
+                box.write('isAnonymous', true);
+                box.write('isLogin', false);
+                print(box.changes);
+                Navigator.push(
+                  context,
+                  CustomPageRoute(child: const CommonPage()),
+                );
+              },
+            )
         ],
       ),
       body: SingleChildScrollView(
@@ -100,9 +122,12 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     child: Row(
                       children: [
-                        const CustomText(
-                          '+91',
-                          fontSize: 17,
+                        CustomTextButton(
+                          onPressed: () {},
+                          child: CustomText(
+                            countryCode,
+                            fontSize: 17,
+                          ),
                         ),
                         Container(
                           height: 25,
@@ -111,20 +136,31 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.black.withOpacity(0.5),
                         ),
                         Flexible(
-                          child: TextField(
-                            autofocus: true,
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.phone,
-                            decoration: InputDecoration(
-                              hintText: '0 00 00 00',
-                              hintStyle: TextStyle(
-                                fontFamily: 'Poppins',
-                                color: Colors.black.withOpacity(0.5),
+                          child: Form(
+                            key: _formKey,
+                            child: TextFormField(
+                              autofocus: true,
+                              cursorColor: Colors.black,
+                              keyboardType: TextInputType.phone,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Enter Mobile No. to continue';
+                                } else {
+                                  return _phoneNumberValidator(
+                                      '$countryCode$value');
+                                }
+                              },
+                              decoration: InputDecoration(
+                                hintText: '0 00 00 00',
+                                hintStyle: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black.withOpacity(0.5),
+                                ),
+                                isCollapsed: true,
+                                border: InputBorder.none,
+                                contentPadding:
+                                    const EdgeInsets.symmetric(vertical: 18),
                               ),
-                              isCollapsed: true,
-                              border: InputBorder.none,
-                              contentPadding:
-                                  const EdgeInsets.symmetric(vertical: 18),
                             ),
                           ),
                         ),
@@ -170,8 +206,12 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      CustomPageRoute(child: const VerifyNumberPage()));
+                  if(_formKey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      CustomPageRoute(child: const VerifyNumberPage()),
+                    );
+                  }
                 },
               ),
             ],

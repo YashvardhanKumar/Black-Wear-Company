@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../routes/bottom nav bar screens/home page of e commerce/product_page.dart';
+import '../custom_icon_icons.dart';
 import '../custom_page_route.dart';
 import '../custom_text.dart';
 
@@ -44,7 +45,6 @@ class _ProductCardState extends State<ProductCard> {
                     width: 250,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.red,
                       image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(
@@ -116,9 +116,9 @@ class _ProductCardState extends State<ProductCard> {
               child: Material(
                 shape: const CircleBorder(),
                 child: Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Icon(
-                    Icons.favorite_rounded,
+                    CustomIcon.heart,
                     color: widget.isLiked ? Colors.red.shade800 : Colors.grey,
                   ),
                 ),

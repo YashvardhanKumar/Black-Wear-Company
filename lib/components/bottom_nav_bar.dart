@@ -149,19 +149,22 @@
 import 'package:bfm/components/custom_page_route.dart';
 import 'package:bfm/components/custom_text.dart';
 import 'package:bfm/routes/bottom%20nav%20bar%20screens/add%20product/image_add.dart';
+import 'package:bfm/routes/login%20pages/login.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../routes/bottom nav bar screens/add product/video_add.dart';
+import 'common_login_dialog_box.dart';
+
+final box = GetStorage('UserStatus');
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({
     Key? key,
     required this.onNavIndexChanged,
-    required this.onPlusClicked,
     required this.deviceSize,
   }) : super(key: key);
   final ValueChanged<int> onNavIndexChanged;
-  final VoidCallback onPlusClicked;
   final Size deviceSize;
 
   @override
@@ -198,7 +201,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
             icon: const Icon(
               Icons.add_rounded,
             ),
-            onPressed: widget.onPlusClicked,
             deviceSize: widget.deviceSize,
           ),
         );
@@ -312,11 +314,9 @@ class CustomFAB extends StatefulWidget {
   const CustomFAB(
       {Key? key,
       required this.icon,
-      required this.onPressed,
       required this.deviceSize})
       : super(key: key);
   final Icon icon;
-  final VoidCallback onPressed;
   final Size deviceSize;
 
   @override
@@ -423,6 +423,10 @@ class _CustomFABState extends State<CustomFAB> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        if(!box.read('isLogin')) {
+          showDialog(context: context, builder: (_) => CommonLoginDialogBox());
+          return;
+        }
         onClick = true;
         WidgetsBinding.instance
             .addPostFrameCallback((timeStamp) => showOverlay());

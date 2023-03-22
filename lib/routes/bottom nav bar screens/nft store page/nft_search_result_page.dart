@@ -103,7 +103,10 @@ class _NFTSearchResultPageState extends State<NFTSearchResultPage> {
           padding: EdgeInsets.all(10.0),
           child: CustomGridView(
             itemCount: 10,
-            itemBuilder: (_, i) => NonLiveBiddingTile(),
+            itemBuilder: (_, i) => NonLiveBiddingTile(
+              onLiked: () {},
+              isLiked: i % 2 == 0,
+            ),
           ),
         )
       ],

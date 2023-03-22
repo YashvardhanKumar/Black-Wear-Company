@@ -1,5 +1,8 @@
 import 'dart:async';
+import 'package:get_storage/get_storage.dart';
+
 import '../../../components/buttons/category_of_pref.dart';
+import '../../../components/common_login_dialog_box.dart';
 import '../../../components/custom_page_route.dart';
 import 'product_page.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,8 @@ import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_text.dart';
 import '../../intro_page.dart';
 import 'cart_page.dart';
+
+final box = GetStorage('UserStatus');
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -58,6 +63,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
+      extendBody: true,
       // appBar: CustomAppBar(
       //
       //   isLeadingPresent: false,
@@ -111,8 +117,12 @@ class _HomePageState extends State<HomePage> {
                         color: Color(0xff49454F),
                       ),
                       onPressed: () {
-                        Navigator.push(
-                            context, CustomPageRoute(child: CartPage()));
+                        if (!box.read('isLogin')!) {
+                          showDialog(context: context, builder: (_) => CommonLoginDialogBox());
+                        } else {
+                          Navigator.push(
+                              context, CustomPageRoute(child: CartPage()));
+                        }
                       },
                     ),
                     Padding(

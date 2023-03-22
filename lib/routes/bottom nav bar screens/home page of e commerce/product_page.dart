@@ -1,11 +1,18 @@
 import 'package:bfm/components/buttons/category_tile.dart';
 import 'package:bfm/components/custom_app_bar.dart';
+import 'package:bfm/components/custom_page_route.dart';
 import 'package:bfm/components/custom_text.dart';
+import 'package:bfm/routes/bottom%20nav%20bar%20screens/home%20page%20of%20e%20commerce/cart_page.dart';
 import 'package:bfm/routes/intro_page.dart';
+import 'package:bfm/routes/login%20pages/login.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import '../../../components/buttons/custom_chips.dart';
 import '../../../components/buttons/icon_button.dart';
 import '../../../components/buttons/text_button.dart';
+import '../../../components/common_login_dialog_box.dart';
+
+final box = GetStorage('UserStatus');
 
 class ProductPage extends StatefulWidget {
   const ProductPage({Key? key}) : super(key: key);
@@ -138,29 +145,29 @@ class _ProductPageState extends State<ProductPage> {
                   ProductInfoCards(
                     description: CustomText(
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-                          'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
-                          'Adipiscing elit pellentesque habitant morbi. Massa placerat duis '
-                          'ultricies lacus sed turpis tincidunt. Aenean euismod elementum nisi '
-                          'quis eleifend. Lectus mauris ultrices eros in cursus turpis massa '
-                          'tincidunt dui. Pharetra massa massa ultricies mi quis hendrerit '
-                          'dolor magna eget. Neque volutpat ac tincidunt vitae semper quis. '
-                          'Ipsum dolor sit amet consectetur adipiscing. Sit amet est placerat '
-                          'in egestas erat imperdiet sed euismod. Sed viverra ipsum nunc aliquet '
-                          'bibendum. Fames ac turpis egestas maecenas. Amet volutpat consequat mauris'
-                          ' nunc congue. Nulla facilisi etiam dignissim diam quis enim lobortis '
-                          'scelerisque. Enim nulla aliquet porttitor lacus. Enim eu turpis egestas '
-                          'pretium aenean. Vitae et leo duis ut diam quam nulla porttitor.'
-                          '\n\nAliquet eget sit amet tellus. Gravida quis blandit turpis cursus in hac '
-                          'habitasse platea dictumst. Convallis convallis tellus id interdum velit '
-                          'laoreet. Bibendum ut tristique et egestas quis. Gravida arcu ac tortor '
-                          'dignissim. Aenean et tortor at risus viverra adipiscing at. Aliquet nibh '
-                          'praesent tristique magna sit amet purus. Sit amet aliquam id diam maecenas '
-                          'ultricies mi eget mauris. At lectus urna duis convallis convallis tellus id. '
-                          'A erat nam at lectus. Elit pellentesque habitant morbi tristique. Rhoncus '
-                          'mattis rhoncus urna neque viverra. Sapien pellentesque habitant morbi tristique '
-                          'senectus et netus. Vitae nunc sed velit dignissim sodales ut. Varius duis at '
-                          'consectetur lorem donec massa sapien faucibus et. Nunc eget lorem dolor sed '
-                          'viverra ipsum nunc ',
+                      'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                      'Adipiscing elit pellentesque habitant morbi. Massa placerat duis '
+                      'ultricies lacus sed turpis tincidunt. Aenean euismod elementum nisi '
+                      'quis eleifend. Lectus mauris ultrices eros in cursus turpis massa '
+                      'tincidunt dui. Pharetra massa massa ultricies mi quis hendrerit '
+                      'dolor magna eget. Neque volutpat ac tincidunt vitae semper quis. '
+                      'Ipsum dolor sit amet consectetur adipiscing. Sit amet est placerat '
+                      'in egestas erat imperdiet sed euismod. Sed viverra ipsum nunc aliquet '
+                      'bibendum. Fames ac turpis egestas maecenas. Amet volutpat consequat mauris'
+                      ' nunc congue. Nulla facilisi etiam dignissim diam quis enim lobortis '
+                      'scelerisque. Enim nulla aliquet porttitor lacus. Enim eu turpis egestas '
+                      'pretium aenean. Vitae et leo duis ut diam quam nulla porttitor.'
+                      '\n\nAliquet eget sit amet tellus. Gravida quis blandit turpis cursus in hac '
+                      'habitasse platea dictumst. Convallis convallis tellus id interdum velit '
+                      'laoreet. Bibendum ut tristique et egestas quis. Gravida arcu ac tortor '
+                      'dignissim. Aenean et tortor at risus viverra adipiscing at. Aliquet nibh '
+                      'praesent tristique magna sit amet purus. Sit amet aliquam id diam maecenas '
+                      'ultricies mi eget mauris. At lectus urna duis convallis convallis tellus id. '
+                      'A erat nam at lectus. Elit pellentesque habitant morbi tristique. Rhoncus '
+                      'mattis rhoncus urna neque viverra. Sapien pellentesque habitant morbi tristique '
+                      'senectus et netus. Vitae nunc sed velit dignissim sodales ut. Varius duis at '
+                      'consectetur lorem donec massa sapien faucibus et. Nunc eget lorem dolor sed '
+                      'viverra ipsum nunc ',
                       fontSize: 11,
                       color: Colors.grey.shade700,
                       height: 1.7,
@@ -317,8 +324,8 @@ class _ProductPageState extends State<ProductPage> {
                                 Padding(
                                   padding: const EdgeInsets.all(10.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment
-                                        .start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       CustomText(
                                         'Arman Rokni',
@@ -373,18 +380,18 @@ class _ProductPageState extends State<ProductPage> {
                         ),
                         CustomText(
                           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-                              'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
-                              'Adipiscing elit pellentesque habitant morbi. Massa placerat duis '
-                              'ultricies lacus sed turpis tincidunt. Aenean euismod elementum nisi '
-                              'quis eleifend. Lectus mauris ultrices eros in cursus turpis massa '
-                              'tincidunt dui. Pharetra massa massa ultricies mi quis hendrerit '
-                              'dolor magna eget. Neque volutpat ac tincidunt vitae semper quis. '
-                              'Ipsum dolor sit amet consectetur adipiscing. Sit amet est placerat '
-                              'in egestas erat imperdiet sed euismod. Sed viverra ipsum nunc aliquet '
-                              'bibendum. Fames ac turpis egestas maecenas. Amet volutpat consequat mauris'
-                              ' nunc congue. Nulla facilisi etiam dignissim diam quis enim lobortis '
-                              'scelerisque. Enim nulla aliquet porttitor lacus. Enim eu turpis egestas '
-                              'pretium aenean. Vitae et leo duis ut diam quam nulla porttitor.',
+                          'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                          'Adipiscing elit pellentesque habitant morbi. Massa placerat duis '
+                          'ultricies lacus sed turpis tincidunt. Aenean euismod elementum nisi '
+                          'quis eleifend. Lectus mauris ultrices eros in cursus turpis massa '
+                          'tincidunt dui. Pharetra massa massa ultricies mi quis hendrerit '
+                          'dolor magna eget. Neque volutpat ac tincidunt vitae semper quis. '
+                          'Ipsum dolor sit amet consectetur adipiscing. Sit amet est placerat '
+                          'in egestas erat imperdiet sed euismod. Sed viverra ipsum nunc aliquet '
+                          'bibendum. Fames ac turpis egestas maecenas. Amet volutpat consequat mauris'
+                          ' nunc congue. Nulla facilisi etiam dignissim diam quis enim lobortis '
+                          'scelerisque. Enim nulla aliquet porttitor lacus. Enim eu turpis egestas '
+                          'pretium aenean. Vitae et leo duis ut diam quam nulla porttitor.',
                           fontSize: 10,
                           color: Colors.grey,
                           height: 1.7,
@@ -402,111 +409,124 @@ class _ProductPageState extends State<ProductPage> {
         backgroundColor: Colors.white,
         onClosing: () {},
         enableDrag: false,
-        builder: (BuildContext context) =>
-            Container(
-              padding: EdgeInsets.all(10),
-              alignment: Alignment.center,
-              height: 120,
-              // color: Colors.red,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+        builder: (BuildContext context) => Container(
+          padding: EdgeInsets.all(10),
+          alignment: Alignment.center,
+          height: 120,
+          // color: Colors.red,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      CustomChips(
-                        icon: null,
-                        text: 'S',
-                        onPressed: (val) {},
-                        selected: true,
-                      ),
-                      CustomChips(
-                        icon: null,
-                        text: 'M',
-                        onPressed: (val) {},
-                        selected: false,
-                      ),
-                      CustomChips(
-                        icon: null,
-                        text: 'L',
-                        onPressed: (val) {},
-                        selected: false,
-                      ),
-                      CustomChips(
-                        icon: null,
-                        text: 'XL',
-                        onPressed: (val) {},
-                        selected: false,
-                      ),
-                      CustomChips(
-                        icon: null,
-                        text: 'XXL',
-                        onPressed: (val) {},
-                        selected: false,
-                      ),
-                    ],
+                  CustomChips(
+                    icon: null,
+                    text: 'S',
+                    onPressed: (val) {},
+                    selected: true,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            CustomText(
-                              '\$ 239.93',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            CustomText(
-                              'Total amount',
-                              fontSize: 10,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey.shade700,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: CustomOutlineButton(
-                            child: Padding(
-                              padding: EdgeInsets.all(10),
-                              child: CustomText(
-                                'Add to Cart',
-                                fontWeight: FontWeight.w500,
-                                textAlign: TextAlign.center,
-                                fontSize: 12,
-                              ),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: CustomFilledButton(
-                            child: Padding(
-                              padding: EdgeInsets.all(12),
-                              child: CustomText(
-                                'Buy now',
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                                textAlign: TextAlign.center,
-                                fontSize: 12,
-                              ),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                      )
-                    ],
+                  CustomChips(
+                    icon: null,
+                    text: 'M',
+                    onPressed: (val) {},
+                    selected: false,
+                  ),
+                  CustomChips(
+                    icon: null,
+                    text: 'L',
+                    onPressed: (val) {},
+                    selected: false,
+                  ),
+                  CustomChips(
+                    icon: null,
+                    text: 'XL',
+                    onPressed: (val) {},
+                    selected: false,
+                  ),
+                  CustomChips(
+                    icon: null,
+                    text: 'XXL',
+                    onPressed: (val) {},
+                    selected: false,
                   ),
                 ],
               ),
-            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        CustomText(
+                          '\$ 239.93',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        CustomText(
+                          'Total amount',
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey.shade700,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: CustomOutlineButton(
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: CustomText(
+                            'Add to Cart',
+                            fontWeight: FontWeight.w500,
+                            textAlign: TextAlign.center,
+                            fontSize: 12,
+                          ),
+                        ),
+                        onPressed: () {
+                          if (!box.read('isLogin')!) {
+                            showDialog(context: context, builder: (_) => CommonLoginDialogBox());
+                          } else {
+                            Navigator.push(
+                                context, CustomPageRoute(child: CartPage()));
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: CustomFilledButton(
+                        child: Padding(
+                          padding: EdgeInsets.all(12),
+                          child: CustomText(
+                            'Buy now',
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                            textAlign: TextAlign.center,
+                            fontSize: 12,
+                          ),
+                        ),
+                        onPressed: () {
+                          if (!box.read('isLogin')!) {
+                            showDialog(context: context, builder: (_) => CommonLoginDialogBox());
+                          } else {
+                            Navigator.push(
+                                context, CustomPageRoute(child: CartPage()));
+                          }
+                        },
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -524,9 +544,7 @@ class RatingsBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

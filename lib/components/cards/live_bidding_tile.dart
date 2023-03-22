@@ -19,7 +19,7 @@ class LiveBiddingTile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          NonLiveBiddingTile(),
+          NonLiveBiddingTile(onLiked: () {  }, isLiked: true,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Row(

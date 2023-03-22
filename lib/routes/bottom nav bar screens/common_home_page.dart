@@ -25,15 +25,16 @@ class _CommonPageState extends State<CommonPage> {
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
     return Scaffold(
+      extendBody: true,
       bottomNavigationBar: BottomNavBar(
         onNavIndexChanged: (int value) {
           idx = value;
           setState(() {});
         },
-        onPlusClicked: () {},
         deviceSize: deviceSize,
       ),
       body: SafeArea(
+        bottom: false,
         child: [
           HomePage(),
           StorePage(),

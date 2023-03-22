@@ -1,9 +1,13 @@
 import 'package:bfm/components/custom_page_route.dart';
+import 'package:bfm/routes/bottom%20nav%20bar%20screens/common_home_page.dart';
+import 'package:bfm/routes/bottom%20nav%20bar%20screens/home%20page%20of%20e%20commerce/home_page.dart';
 import 'package:bfm/routes/intro_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init('UserStatus');
   runApp(const MyApp());
 }
 
@@ -24,6 +28,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+final box = GetStorage('UserStatus');
+
 class LogoPage extends StatefulWidget {
   const LogoPage({super.key});
 
@@ -35,12 +41,17 @@ class _LogoPageState extends State<LogoPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-        Duration(seconds: 2),
-        () => {
-              Navigator.pushReplacement(
-                  context, CustomPageRoute(child: IntroPage()))
-            });
+    Future.delayed(const Duration(seconds: 2), () {
+      return Navigator.pushReplacement(
+        context,
+        CustomPageRoute(
+          child: ((box.read('isLogin') ?? false) ||
+                  (box.read('isAnonymous') ?? false))
+              ? const CommonPage()
+              : const IntroPage(),
+        ),
+      );
+    });
   }
 
   @override

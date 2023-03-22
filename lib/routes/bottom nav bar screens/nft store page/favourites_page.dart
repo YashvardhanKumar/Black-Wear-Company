@@ -37,15 +37,15 @@ class _FavouritesPageState extends State<FavouritesPage> {
             return Row(
               children: [
                 Expanded(
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(5.0),
-                    child: NonLiveBiddingTile(),
+                    child: NonLiveBiddingTile(onLiked: () {  }, isLiked: i%2 == 0,),
                   ),
                 ),
                 Expanded(
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(5.0),
-                    child: NonLiveBiddingTile(),
+                    child: NonLiveBiddingTile(onLiked: () {  }, isLiked: i%2 == 0,),
                   ),
                 ),
               ],

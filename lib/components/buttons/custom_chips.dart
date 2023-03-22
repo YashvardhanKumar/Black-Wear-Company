@@ -62,7 +62,7 @@ class CustomChipsState extends State<CustomChips> {
               color: widget.selected ? Colors.black : Colors.transparent,
               border: Border.all(
                 color: widget.borderColor ?? Colors.black,
-                width: widget.borderWidth ?? 1.5,
+                width: widget.borderWidth ?? 2,
               ),
             ),
             child: Padding(
@@ -86,6 +86,7 @@ class CustomChipsState extends State<CustomChips> {
                     widget.text,
                     color: widget.selected ? Colors.white : Colors.black,
                     textAlign: TextAlign.center,
+                    fontWeight: FontWeight.w600,
                     // fontWeight: FontWeight.w600,
                   )
                 ],

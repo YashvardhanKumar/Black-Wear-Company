@@ -2,7 +2,10 @@ import 'package:bfm/components/buttons/text_button.dart';
 import 'package:bfm/components/custom_app_bar.dart';
 import 'package:bfm/components/custom_icon_icons.dart';
 import 'package:bfm/components/custom_text.dart';
+import 'package:bfm/routes/bottom%20nav%20bar%20screens/add%20product/sell_price_added_success.dart';
 import 'package:flutter/material.dart';
+
+import '../../../components/custom_page_route.dart';
 
 class SellNFTPage extends StatefulWidget {
   const SellNFTPage({Key? key}) : super(key: key);
@@ -269,8 +272,8 @@ class _SellNFTPageState extends State<SellNFTPage> {
                           fontWeight: FontWeight.w600, color: Colors.white),
                     ),
                     onPressed: () {
-                      // Navigator.push(
-                      //     context, CustomPageRoute(child: SellNFTPage()));
+                      Navigator.push(
+                          context, CustomPageRoute(child: SellPriceAddedSuccess()));
                     },
                   ),
                 ],

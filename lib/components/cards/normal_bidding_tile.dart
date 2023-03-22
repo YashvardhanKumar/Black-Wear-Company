@@ -7,9 +7,10 @@ import '../buttons/icon_button.dart';
 import '../custom_text.dart';
 class NonLiveBiddingTile extends StatelessWidget {
   const NonLiveBiddingTile({
-    Key? key,
+    Key? key, required this.onLiked, required this.isLiked,
   }) : super(key: key);
-
+  final VoidCallback onLiked;
+  final bool isLiked;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -37,17 +38,22 @@ class NonLiveBiddingTile extends StatelessWidget {
                     fit: BoxFit.fitHeight,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: CustomIconButton(
-                    icon: Icon(
-                      CustomIcon.heart,
-                      // size: 12,
-                      color: Colors.red.shade800,
+                GestureDetector(
+                  onTap: onLiked,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Material(
+                      shape: const CircleBorder(),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Icon(
+                          CustomIcon.heart,
+                          color: isLiked ? Colors.red.shade800 : Colors.grey,
+                        ),
+                      ),
                     ),
-                    onPressed: () {},
                   ),
-                ),
+                )
               ],
             ),
             Row(

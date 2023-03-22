@@ -27,6 +27,7 @@ class _NFTProfilePageState extends State<NFTProfilePage> {
   Widget build(BuildContext context) {
     Size devSize = MediaQuery.of(context).size;
     return Scaffold(
+      extendBody: true,
       appBar: CustomAppBar(
         // padding: false,
         // toolbarHeight: 54,
@@ -43,8 +44,7 @@ class _NFTProfilePageState extends State<NFTProfilePage> {
                 // enableDrag: false,
                 isScrollControlled: true,
                 context: context,
-                builder: (_) =>
-                    NFTFilterBottomSheet(screenSize: devSize),
+                builder: (_) => NFTFilterBottomSheet(screenSize: devSize),
               );
             },
           ),
@@ -292,6 +292,10 @@ class _NFTProfilePageState extends State<NFTProfilePage> {
           height: devSize.height,
           child: PageView(
             controller: controller,
+            onPageChanged: (value) {
+              pageNo = value;
+              setState(() {});
+            },
             children: [
               Padding(
                 padding: EdgeInsets.all(10.0),
@@ -300,12 +304,9 @@ class _NFTProfilePageState extends State<NFTProfilePage> {
                   itemCount: 10,
                   itemBuilder: (context, i) {
                     return NonLiveBiddingTile(
-                        // discountedPrice: '\$33.00',
-                        // isLiked: true,
-                        // prevPrice: '\$40.00',
-                        // onLiked: () {},
-                        // onCardClicked: () {},
-                        );
+                      onLiked: () {},
+                      isLiked: i % 2 == 0,
+                    );
                   },
                 ),
               ),
@@ -333,7 +334,6 @@ class RenderStickySliver extends RenderSliverSingleBoxAdapter {
 
   @override
   void performLayout() {
-    // geometry = SliverGeometry.zero;
     child?.layout(
       constraints.asBoxConstraints(),
       parentUsesSize: true,

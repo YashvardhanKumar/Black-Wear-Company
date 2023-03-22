@@ -193,16 +193,16 @@ class _StorePageState extends State<StorePage> {
                 heading: 'Hot Items',
                 onSeeAllClicked: () {},
               ),
-              const SingleChildScrollView(
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Row(
                     children: [
-                      NonLiveBiddingTile(),
-                      NonLiveBiddingTile(),
-                      NonLiveBiddingTile(),
-                      NonLiveBiddingTile(),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: true,),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: false,),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: true,),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: false,),
                     ],
                   ),
                 ),
@@ -211,16 +211,16 @@ class _StorePageState extends State<StorePage> {
                 heading: 'Popular',
                 onSeeAllClicked: () {},
               ),
-              const SingleChildScrollView(
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Row(
                     children: [
-                      NonLiveBiddingTile(),
-                      NonLiveBiddingTile(),
-                      NonLiveBiddingTile(),
-                      NonLiveBiddingTile(),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: true,),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: false,),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: true,),
+                      NonLiveBiddingTile(onLiked: () {  }, isLiked: false,),
                     ],
                   ),
                 ),
