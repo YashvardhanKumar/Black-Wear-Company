@@ -22,7 +22,6 @@ class _CommonLoginDialogBoxState extends State<CommonLoginDialogBox> {
       content: CustomText('To access this, you have to login first'),
       actions: [
         FilledButton(
-          child: CustomText('Login'),
           style: FilledButton.styleFrom(
             backgroundColor: Colors.black,
           ),
@@ -30,14 +29,15 @@ class _CommonLoginDialogBoxState extends State<CommonLoginDialogBox> {
             Navigator.pop(context);
             Navigator.push(context, CustomPageRoute(child: LoginPage()));
           },
+          child: CustomText('Login'),
         ),
         FilledButton.tonal(
-            style:
-                FilledButton.styleFrom(backgroundColor: Colors.grey.shade300),
-            child: CustomText('Cancel'),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
+          style: FilledButton.styleFrom(backgroundColor: Colors.grey.shade300),
+          child: CustomText('Cancel'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ],
     );
   }

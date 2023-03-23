@@ -13,8 +13,8 @@ class BidSuccessPage extends StatelessWidget {
       appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(),
             Padding(
@@ -47,23 +47,31 @@ class BidSuccessPage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: CustomFilledButton(
-                width: double.infinity,
-                child: const Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: CustomText('View Item',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
-                      color: Colors.white),
-                ),
-                onPressed: () {},
-              ),
-            ),
             const SizedBox()
           ],
         ),
+      ),
+      bottomNavigationBar: BottomSheet(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        onClosing: () {},
+        builder: (BuildContext context) {
+          return Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: CustomFilledButton(
+              // width: double.infinity,
+              child: const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: CustomText('View Item',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                    textAlign: TextAlign.center,
+                    color: Colors.white),
+              ),
+              onPressed: () {},
+            ),
+          );
+        },
       ),
     );
   }

@@ -1,10 +1,8 @@
-import 'package:bfm/components/buttons/category_tile.dart';
 import 'package:bfm/components/custom_app_bar.dart';
 import 'package:bfm/components/custom_page_route.dart';
 import 'package:bfm/components/custom_text.dart';
 import 'package:bfm/routes/bottom%20nav%20bar%20screens/home%20page%20of%20e%20commerce/cart_page.dart';
 import 'package:bfm/routes/intro_page.dart';
-import 'package:bfm/routes/login%20pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../components/buttons/custom_chips.dart';
@@ -22,50 +20,107 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  int pageNo = 0;
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      extendBodyBehindAppBar: true,
-      appBar: CustomAppBar(
-        backgroundColor: Colors.black45,
-        leading: Padding(
-          padding: const EdgeInsets.only(right: 15.0),
-          child: CustomOutlinedIconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              size: 18,
-              color: Colors.white,
+      // extendBodyBehindAppBar: true,
+      // appBar: CustomAppBar(
+      //   backgroundColor: Colors.black26,
+      //   leading: Padding(
+      //     padding: const EdgeInsets.only(right: 15.0),
+      //     child: CustomOutlinedIconButton(
+      //       icon: const Icon(
+      //         Icons.arrow_back_ios_new_rounded,
+      //         size: 18,
+      //         color: Colors.white,
+      //       ),
+      //       onPressed: () {
+      //         Navigator.pop(context);
+      //       },
+      //     ),
+      //   ),
+      //   // isTransparent: true,
+      //   title: const CustomText('Product Name',
+      //       fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white),
+      //   actions: [
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: const Icon(
+      //         Icons.favorite,
+      //         color: Colors.white,
+      //       ),
+      //     )
+      //   ],
+      // ),
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return [
+            SliverAppBar(
+              foregroundColor: Colors.transparent,
+              // toolbarHeight: 90,
+              floating: true,
+              stretch: true,
+              snap: true,
+              surfaceTintColor: Colors.transparent,
+              backgroundColor: Colors.black54,
+              elevation: 0,
+              scrolledUnderElevation: 0,
+              leading: IconButton(onPressed: () {  }, icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,),),
+              title: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: const CustomText(
+                  'Product Name',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+              // leadingWidth: 0,
+              // leading: Container(),
+              titleSpacing: 0,
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                  ),
+                )
+              ],
             ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-        // isTransparent: true,
-        title: const CustomText('Product Name',
-            fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.favorite,
-                color: Colors.white,
-              ))
-        ],
-      ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.zero,
-        child: Column(
+          ];
+        },
+        body: ListView(
+          padding: EdgeInsets.zero,
           // mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Image.asset('images/product.png'),
+                SizedBox(
+                  height: size.width,
+                  width: size.width,
+                  child: PageView.builder(
+                    itemCount: 5,
+                    onPageChanged: (i) {
+                      pageNo = i;
+                      setState(() {});
+                    },
+                    itemBuilder: (_, i) {
+                      return Image.asset(
+                        'images/product.png',
+                        fit: BoxFit.cover,
+                      );
+                    },
+                  ),
+                ),
                 Container(
-                  height: 30,
+                  height: 40,
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
@@ -74,14 +129,17 @@ class _ProductPageState extends State<ProductPage> {
                       tileMode: TileMode.decal,
                       colors: [
                         Colors.transparent,
-                        Colors.white54,
+                        Colors.white70,
                       ],
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: DotIndicator(nextClickedNo: 1, itemCount: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: DotIndicator(
+                    nextClickedNo: pageNo + 1,
+                    itemCount: 5,
+                  ),
                 ),
               ],
             ),
@@ -179,7 +237,7 @@ class _ProductPageState extends State<ProductPage> {
                   ProductInfoCards(
                     expanded: true,
                     title: 'Product Specification',
-                    description: Column(
+                    description: const Column(
                       children: [
                         BulletPointsText(
                             'Oversized fit - Super Loose On Body Thoda Hawa Aane De.'),
@@ -192,7 +250,7 @@ class _ProductPageState extends State<ProductPage> {
                   ProductInfoCards(
                     expanded: false,
                     title: 'Return & Exchange',
-                    description: Column(
+                    description: const Column(
                       children: [
                         BulletPointsText(
                             'Oversized fit - Super Loose On Body Thoda Hawa Aane De.'),
@@ -205,7 +263,7 @@ class _ProductPageState extends State<ProductPage> {
                   ProductInfoCards(
                     expanded: false,
                     title: 'Manufactured By',
-                    description: Column(
+                    description: const Column(
                       children: [
                         BulletPointsText(
                             'Oversized fit - Super Loose On Body Thoda Hawa Aane De.'),
@@ -221,8 +279,8 @@ class _ProductPageState extends State<ProductPage> {
                     child: CustomFilledButton(
                       width: double.infinity,
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(15.0),
                         child: CustomText('Write Review', color: Colors.white),
                       ),
                     ),
@@ -235,11 +293,11 @@ class _ProductPageState extends State<ProductPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
+                  const Padding(
+                    padding: EdgeInsets.all(5.0),
                     child: CustomText(
                       'Customer reviews',
                       fontSize: 22,
@@ -275,29 +333,29 @@ class _ProductPageState extends State<ProductPage> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        CustomText(
+                        const CustomText(
                           '4.8 out of 5',
                           fontSize: 16,
                         ),
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
+                  const Padding(
+                    padding: EdgeInsets.all(5.0),
                     child: CustomText(
                       '27 global ratings',
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  RatingsBar(ratingPercent: 0.80, starNo: 5),
-                  RatingsBar(ratingPercent: 0.10, starNo: 4),
-                  RatingsBar(ratingPercent: 0.05, starNo: 3),
-                  RatingsBar(ratingPercent: 0.05, starNo: 2),
-                  RatingsBar(ratingPercent: 0.00, starNo: 1),
+                  const RatingsBar(ratingPercent: 0.80, starNo: 5),
+                  const RatingsBar(ratingPercent: 0.10, starNo: 4),
+                  const RatingsBar(ratingPercent: 0.05, starNo: 3),
+                  const RatingsBar(ratingPercent: 0.05, starNo: 2),
+                  const RatingsBar(ratingPercent: 0.00, starNo: 1),
                 ],
               ),
             ),
@@ -306,7 +364,7 @@ class _ProductPageState extends State<ProductPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomText(
+                  const CustomText(
                     'User reviews',
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
@@ -318,11 +376,11 @@ class _ProductPageState extends State<ProductPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
+                            const Row(
                               children: [
                                 CircleAvatar(),
                                 Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: EdgeInsets.all(10.0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -378,7 +436,7 @@ class _ProductPageState extends State<ProductPage> {
                             ),
                           ],
                         ),
-                        CustomText(
+                        const CustomText(
                           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
                           'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
                           'Adipiscing elit pellentesque habitant morbi. Massa placerat duis '
@@ -410,9 +468,9 @@ class _ProductPageState extends State<ProductPage> {
         onClosing: () {},
         enableDrag: false,
         builder: (BuildContext context) => Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           alignment: Alignment.center,
-          height: 120,
+          height: 130,
           // color: Colors.red,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -459,7 +517,7 @@ class _ProductPageState extends State<ProductPage> {
                   Expanded(
                     child: Column(
                       children: [
-                        CustomText(
+                        const CustomText(
                           '\$ 239.93',
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
@@ -477,7 +535,7 @@ class _ProductPageState extends State<ProductPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: CustomOutlineButton(
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.all(10),
                           child: CustomText(
                             'Add to Cart',
@@ -488,10 +546,12 @@ class _ProductPageState extends State<ProductPage> {
                         ),
                         onPressed: () {
                           if (!box.read('isLogin')!) {
-                            showDialog(context: context, builder: (_) => CommonLoginDialogBox());
+                            showDialog(
+                                context: context,
+                                builder: (_) => const CommonLoginDialogBox());
                           } else {
-                            Navigator.push(
-                                context, CustomPageRoute(child: CartPage()));
+                            Navigator.push(context,
+                                CustomPageRoute(child: const CartPage()));
                           }
                         },
                       ),
@@ -501,7 +561,7 @@ class _ProductPageState extends State<ProductPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: CustomFilledButton(
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.all(12),
                           child: CustomText(
                             'Buy now',
@@ -513,10 +573,12 @@ class _ProductPageState extends State<ProductPage> {
                         ),
                         onPressed: () {
                           if (!box.read('isLogin')!) {
-                            showDialog(context: context, builder: (_) => CommonLoginDialogBox());
+                            showDialog(
+                                context: context,
+                                builder: (_) => const CommonLoginDialogBox());
                           } else {
-                            Navigator.push(
-                                context, CustomPageRoute(child: CartPage()));
+                            Navigator.push(context,
+                                CustomPageRoute(child: const CartPage()));
                           }
                         },
                       ),
@@ -552,7 +614,7 @@ class RatingsBar extends StatelessWidget {
         Builder(builder: (context) {
           double ratingWidth = size.width - 40 - 120;
           return Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Stack(
               children: [
                 Container(

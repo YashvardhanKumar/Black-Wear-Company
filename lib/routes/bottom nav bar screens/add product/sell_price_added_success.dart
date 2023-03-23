@@ -1,5 +1,6 @@
 import 'package:bfm/components/custom_app_bar.dart';
 import 'package:bfm/components/custom_text.dart';
+import 'package:bfm/routes/bottom%20nav%20bar%20screens/add%20product/create_store_page.dart';
 import 'package:bfm/routes/bottom%20nav%20bar%20screens/add%20product/view_link.dart';
 import 'package:flutter/material.dart';
 
@@ -62,36 +63,56 @@ class SellPriceAddedSuccess extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CustomFilledButton(
-              width: double.infinity,
-              child: const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: CustomText('View Link',
-                    fontWeight: FontWeight.w600, color: Colors.white),
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, CustomPageRoute(child: ViewLink()));
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CustomOutlineButton(
-              width: double.infinity,
-              child: const Padding(
-                padding: EdgeInsets.all(14.0),
-                child: CustomText(
-                  'Create Store',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              onPressed: () {},
-            ),
-          ),
         ],
+      ),
+      bottomNavigationBar: BottomSheet(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        onClosing: () {},
+        builder: (BuildContext context) {
+          return Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CustomOutlineButton(
+                    width: double.infinity,
+                    child: const Padding(
+                      padding: EdgeInsets.all(14.0),
+                      child: CustomText('View Link',
+                          fontWeight: FontWeight.w600),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context, CustomPageRoute(child: ViewLink()));
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CustomFilledButton(
+                    width: double.infinity,
+                    child: const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: CustomText(
+                        'Create Store',
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        CustomPageRoute(child: CreateStorePage()),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

@@ -11,13 +11,14 @@ class ProductCard extends StatefulWidget {
     required this.discountedPrice,
     required this.isLiked,
     required this.onLiked,
-    required this.onCardClicked,
+    this.onCardClicked, this.onCardLongPress,
   });
 
   final String? prevPrice;
   final String discountedPrice;
   final bool isLiked;
-  final VoidCallback onLiked, onCardClicked;
+  final VoidCallback onLiked;
+  final VoidCallback ?onCardClicked, onCardLongPress;
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -32,9 +33,8 @@ class _ProductCardState extends State<ProductCard> {
         alignment: Alignment.topRight,
         children: [
           GestureDetector(
-            onTap: () {
-              Navigator.push(context, CustomPageRoute(child: ProductPage()));
-            },
+            onTap: widget.onCardClicked,
+            onLongPress: widget.onCardLongPress,
             child: SizedBox(
               width: 200,
               child: Column(
@@ -83,12 +83,12 @@ class _ProductCardState extends State<ProductCard> {
                           ],
                         ),
                       ),
-                      const Row(
+                      Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
                             Icons.star_rate_rounded,
-                            color: Colors.grey,
+                            color: Colors.yellow.shade800,
                           ),
                           CustomText(
                             '4.5',

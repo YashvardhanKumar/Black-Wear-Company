@@ -17,7 +17,7 @@ class CustomGridView extends StatelessWidget {
 
   List<Widget> productRows(BuildContext context) {
     List<Widget> productRowsList = [];
-    for (int i = 0; i < 10; i += 2) {
+    for (int i = 0; i < itemCount; i += 2) {
       productRowsList.add(
         _GridRow(
           itemBuilder: itemBuilder,
@@ -38,10 +38,8 @@ class CustomGridView extends StatelessWidget {
         ),
       );
     }
-    return SingleChildScrollView(
-      child: Column(
-        children: productRows(context),
-      ),
+    return ListView(
+      children: productRows(context),
     );
   }
 }
