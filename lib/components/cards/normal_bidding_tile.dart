@@ -3,7 +3,6 @@ import 'package:bfm/components/custom_page_route.dart';
 // import 'package:bfm/routes/bottom%20nav%20bar%20screens/nft%20store%20page/show_bid_product.dart';
 import 'package:flutter/material.dart';
 import '../../routes/bottom nav bar screens/nft store page/show_bid_product.dart';
-import '../buttons/icon_button.dart';
 import '../custom_text.dart';
 class NonLiveBiddingTile extends StatelessWidget {
   const NonLiveBiddingTile({
@@ -15,7 +14,7 @@ class NonLiveBiddingTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, CustomPageRoute(child: ShowBidProduct()));
+        Navigator.push(context, CustomPageRoute(child: const ShowBidProduct()));
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -61,12 +60,12 @@ class NonLiveBiddingTile extends StatelessWidget {
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                     Icon(CustomIcon.ethereum,size: 18,),
-                    const SizedBox(
+                    SizedBox(
                       width: 3,
                     ),
-                    const CustomText(
+                    CustomText(
                       '0.557 ETH',
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -77,7 +76,7 @@ class NonLiveBiddingTile extends StatelessWidget {
                 Flexible(
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: [
+                    children: const [
                       Icon(
                         Icons.star_rate_rounded,
                         color: Colors.grey,
@@ -96,7 +95,7 @@ class NonLiveBiddingTile extends StatelessWidget {
                 )
               ],
             ),
-            CustomText(
+            const CustomText(
               'Cream3D #789',
               // fontWeight: FontWeight.w600,
               color: Colors.grey,
@@ -104,8 +103,8 @@ class NonLiveBiddingTile extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const CustomText(
+              children: const [
+                CustomText(
                   'StrongQuest',
                   fontWeight: FontWeight.w600,
                   fontSize: 10,

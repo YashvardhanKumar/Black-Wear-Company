@@ -8,10 +8,10 @@ class ShareBidDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
-      child: const Column(
+      child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(10.0),
             child: CustomText(
               'Share',
@@ -21,14 +21,14 @@ class ShareBidDialog extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       ShareAppButtons(
                         image: 'whatsapplogo.png',
                         appName: 'WhatsApp',
@@ -49,10 +49,10 @@ class ShareBidDialog extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       ShareAppButtons(
                         image: 'yahoologo.jpg',
                         appName: 'Yahoo',

@@ -13,7 +13,7 @@ class _LiveBiddingPageState extends State<LiveBiddingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(

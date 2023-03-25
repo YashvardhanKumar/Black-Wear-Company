@@ -18,10 +18,10 @@ class FilterRow extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(5.0),
             child: CustomOutlineButton(
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 6.0, horizontal: 8),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 8),
                 child: Row(
-                  children: [
+                  children: const [
                     CustomText(
                       'Sort',
                       fontSize: 14,
@@ -42,10 +42,10 @@ class FilterRow extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: CustomOutlineButton(
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 6.0, horizontal: 8),
+                  child:  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 8),
                     child: Row(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.filter_list_rounded,
                           size: 18,
@@ -60,15 +60,15 @@ class FilterRow extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.push(
-                        context, CustomPageRoute(child: ProductFilterPage()));
+                        context, CustomPageRoute(child: const ProductFilterPage()));
                   },
                 ),
               ),
               Material(
                 color: Colors.red.shade800,
-                shape: CircleBorder(),
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
+                shape: const CircleBorder(),
+                child: const Padding(
+                  padding: EdgeInsets.all(5.0),
                   child: CustomText(
                     '3',
                     fontSize: 10,

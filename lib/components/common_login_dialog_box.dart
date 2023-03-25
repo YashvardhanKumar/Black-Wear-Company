@@ -1,4 +1,3 @@
-import 'package:bfm/components/buttons/text_button.dart';
 import 'package:bfm/components/custom_page_route.dart';
 import 'package:bfm/components/custom_text.dart';
 import 'package:bfm/routes/login%20pages/login.dart';
@@ -18,8 +17,8 @@ class _CommonLoginDialogBoxState extends State<CommonLoginDialogBox> {
       backgroundColor: Colors.white,
       surfaceTintColor: Colors.transparent,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      title: CustomText('Login to continue'),
-      content: CustomText('To access this, you have to login first'),
+      title: const CustomText('Login to continue'),
+      content: const CustomText('To access this, you have to login first'),
       actions: [
         FilledButton(
           style: FilledButton.styleFrom(
@@ -27,13 +26,13 @@ class _CommonLoginDialogBoxState extends State<CommonLoginDialogBox> {
           ),
           onPressed: () {
             Navigator.pop(context);
-            Navigator.push(context, CustomPageRoute(child: LoginPage()));
+            Navigator.push(context, CustomPageRoute(child: const LoginPage()));
           },
-          child: CustomText('Login'),
+          child: const CustomText('Login'),
         ),
         FilledButton.tonal(
           style: FilledButton.styleFrom(backgroundColor: Colors.grey.shade300),
-          child: CustomText('Cancel'),
+          child: const CustomText('Cancel'),
           onPressed: () {
             Navigator.pop(context);
           },

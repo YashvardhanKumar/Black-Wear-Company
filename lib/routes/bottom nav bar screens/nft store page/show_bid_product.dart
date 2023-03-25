@@ -45,7 +45,7 @@ class _ShowBidProductState extends State<ShowBidProduct> {
           CustomIconButton(
             icon: const Icon(Icons.favorite),
             onPressed: () => Navigator.push(
-                context, CustomPageRoute(child: FavouritesPage())),
+                context, CustomPageRoute(child: const FavouritesPage())),
           ),
         ],
       ),
@@ -101,11 +101,11 @@ class _ShowBidProductState extends State<ShowBidProduct> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 7),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 7),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Flexible(
                   child: CustomText(
                     'Cream3D #789',

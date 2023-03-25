@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:bfm/components/buttons/icon_button.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +66,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     ? Padding(
                         padding: const EdgeInsets.only(right: 15.0),
                         child: CustomOutlinedIconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_back_ios_new_rounded,
                             size: 18,
                           ),
@@ -101,5 +100,5 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(70);
+  Size get preferredSize => const Size.fromHeight(70);
 }

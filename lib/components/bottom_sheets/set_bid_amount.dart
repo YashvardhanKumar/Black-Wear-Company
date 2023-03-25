@@ -23,7 +23,7 @@ class _PlaceBidDialogState extends State<PlaceBidDialog> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Material(
+          const Material(
             shape: StadiumBorder(),
             color: Colors.grey,
             child: SizedBox(
@@ -52,7 +52,7 @@ class _PlaceBidDialogState extends State<PlaceBidDialog> {
               children: [
                 CustomIconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.remove,
                     color: Colors.black,
                     size: 22,
@@ -78,7 +78,7 @@ class _PlaceBidDialogState extends State<PlaceBidDialog> {
                 ),
                 CustomIconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.add,
                     color: Colors.black,
                     size: 22,
@@ -96,7 +96,7 @@ class _PlaceBidDialogState extends State<PlaceBidDialog> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             // color: Colors.red,
             child: Row(
               // mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +133,7 @@ class _PlaceBidDialogState extends State<PlaceBidDialog> {
             child: CustomFilledButton(
               onPressed: () {
                 Navigator.push(
-                    context, CustomPageRoute(child: BidSuccessPage()));
+                    context, CustomPageRoute(child: const BidSuccessPage()));
               },
               child: const Center(
                 child: Padding(

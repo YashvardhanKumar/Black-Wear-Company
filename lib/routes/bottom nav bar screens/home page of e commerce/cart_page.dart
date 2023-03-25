@@ -12,7 +12,7 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: CustomText(
           'Cart',
           fontWeight: FontWeight.w600,
@@ -20,7 +20,7 @@ class CartPage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [
+        children: const [
           CartItemCard(),
           CartItemCard(),
           CartItemCard(),
@@ -33,7 +33,7 @@ class CartPage extends StatelessWidget {
         backgroundColor: Colors.white,
         onClosing: () {},
         builder: (BuildContext context) => Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           alignment: Alignment.center,
           height: 120,
           // color: Colors.red,
@@ -48,7 +48,7 @@ class CartPage extends StatelessWidget {
                     flex: 2,
                     child: Column(
                       children: [
-                        CustomText(
+                        const CustomText(
                           '\$ 239.93',
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
@@ -62,13 +62,13 @@ class CartPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(child: SizedBox()),
+                  const Expanded(child: SizedBox()),
                   Expanded(
                     flex: 2,
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: CustomFilledButton(
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.all(15),
                           child: CustomText(
                             'Check Out',
@@ -80,7 +80,7 @@ class CartPage extends StatelessWidget {
                         ),
                         onPressed: () {
                           Navigator.push(
-                              context, CustomPageRoute(child: CheckOutPage()));
+                              context, CustomPageRoute(child: const CheckOutPage()));
                         },
                       ),
                     ),
@@ -103,10 +103,10 @@ class CartItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       elevation: 0,
       shape: RoundedRectangleBorder(
-          side: BorderSide(color: Colors.grey),
+          side: const BorderSide(color: Colors.grey),
           borderRadius: BorderRadius.circular(20)),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -123,45 +123,45 @@ class CartItemCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
+                    const Padding(
+                      padding: EdgeInsets.all(5.0),
                       child: CustomText(
                         'Product Name',
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
                         CustomTextButton(
                           onPressed: () {},
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(5.0),
                             child: Icon(Icons.add_circle_outline_rounded),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        CustomText(
+                        const CustomText(
                           '1',
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         CustomTextButton(
                           onPressed: () {},
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(5.0),
                             child: Icon(Icons.remove_circle_outline_rounded),
                           ),
                         ),
@@ -176,8 +176,8 @@ class CartItemCard extends StatelessWidget {
                     children: [
                       CustomTextButton(
                         onPressed: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
+                        child: const Padding(
+                          padding: EdgeInsets.all(5.0),
                           child: Icon(Icons.delete_outline_rounded),
                         ),
                       ),
@@ -186,7 +186,7 @@ class CartItemCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -202,7 +202,7 @@ class CartItemCard extends StatelessWidget {
                       height: 16,
                       width: 1,
                       color: Colors.grey,
-                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
                     ),
                     CustomText(
                       'Blue',
@@ -210,7 +210,7 @@ class CartItemCard extends StatelessWidget {
                     )
                   ],
                 ),
-                CustomText(
+                const CustomText(
                   '\$34',
                   fontSize: 26,
                   fontWeight: FontWeight.w600,
@@ -220,8 +220,8 @@ class CartItemCard extends StatelessWidget {
             CustomOutlineButton(
               borderColor: Colors.grey.shade300,
               width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
+              child: const Padding(
+                padding: EdgeInsets.all(10.0),
                 child: CustomText('Save for later'),
               ),
               onPressed: () {},

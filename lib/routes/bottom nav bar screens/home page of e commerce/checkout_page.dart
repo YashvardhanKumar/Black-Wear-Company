@@ -1,9 +1,7 @@
-import 'package:bfm/components/buttons/custom_chips.dart';
 import 'package:bfm/components/buttons/text_button.dart';
 import 'package:bfm/components/custom_app_bar.dart';
 import 'package:bfm/components/custom_text.dart';
 import 'package:flutter/material.dart';
-import '../../../components/buttons/icon_button.dart';
 
 class CheckOutPage extends StatefulWidget {
   const CheckOutPage({Key? key}) : super(key: key);
@@ -92,7 +90,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         CustomText(
                           'Subtotal:',
                           fontSize: 16,
@@ -105,7 +103,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         CustomText(
                           'Discount:',
                           fontSize: 16,
@@ -119,7 +117,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         CustomText(
                           'Tax:',
                           fontSize: 16,
@@ -131,10 +129,10 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         ),
                       ],
                     ),
-                    Divider(),
+                    const Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         CustomText(
                           'Total:',
                           fontSize: 18,
@@ -147,22 +145,22 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     CustomFilledButton(
                       width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                      onPressed: (deliveryAddressSelected && paymentSelected)
+                          ? () {}
+                          : null,
+                      child: const Padding(
+                        padding: EdgeInsets.all(16.0),
                         child: CustomText(
                           'Checkout',
                           color: Colors.white,
                           fontSize: 13,
                         ),
                       ),
-                      onPressed: (deliveryAddressSelected && paymentSelected)
-                          ? () {}
-                          : null,
                     )
                   ],
                 ),
@@ -286,10 +284,10 @@ class _SelectDeliveryAddressState extends State<SelectDeliveryAddress> {
           ),
           const SizedBox(height: 20),
           CustomOutlineButton(
-            child: const Padding(
-              padding: EdgeInsets.all(5.0),
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
               child: Row(
-                children: [
+                children: const [
                   Icon(Icons.add_rounded),
                   CustomText(
                     'Add a new Address',
@@ -308,6 +306,7 @@ class _SelectDeliveryAddressState extends State<SelectDeliveryAddress> {
           Align(
             alignment: Alignment.topRight,
             child: CustomFilledButton(
+              onPressed: widget.onAddressConfirmClicked,
               child: const Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
                 child: CustomText(
@@ -316,7 +315,6 @@ class _SelectDeliveryAddressState extends State<SelectDeliveryAddress> {
                   color: Colors.white,
                 ),
               ),
-              onPressed: widget.onAddressConfirmClicked,
             ),
           ),
         ],
@@ -566,7 +564,7 @@ class _PaymentMethodCardState extends State<PaymentMethodCard> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Column(
@@ -647,7 +645,7 @@ class PaymentMethodCheckList extends StatelessWidget {
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
-            side: BorderSide(color: Colors.grey, width: 1),
+            side: const BorderSide(color: Colors.grey, width: 1),
           ),
           value: value,
           onChanged: (value) {

@@ -159,7 +159,7 @@ class _CustomOutlineButtonState extends State<CustomOutlineButton> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             border: Border.all(
-              color: widget.borderColor ?? Color(0xff595757),
+              color: widget.borderColor ?? const Color(0xff595757),
               width: widget.borderWidth ?? 2,
             ),
           ),

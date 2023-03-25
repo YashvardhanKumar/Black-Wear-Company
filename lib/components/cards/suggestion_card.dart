@@ -51,12 +51,12 @@ class SuggestionCard extends StatelessWidget {
                     height: 15,
                   ),
                   CustomFilledButton(
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 8),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.play_circle,
                             color: Colors.white,

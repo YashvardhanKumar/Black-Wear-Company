@@ -15,7 +15,7 @@ class FilterProductCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(5.0),
       child: ListTile(
         minVerticalPadding: 0,
         shape: RoundedRectangleBorder(
@@ -26,7 +26,7 @@ class FilterProductCategory extends StatelessWidget {
         onTap: onTap,
         style: ListTileStyle.drawer,
         selectedColor: Colors.white,
-        contentPadding: EdgeInsets.symmetric(horizontal: 14),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 14),
         title: CustomText(
           title,
           fontWeight: FontWeight.w600,

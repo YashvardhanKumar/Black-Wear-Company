@@ -97,9 +97,9 @@ class _CustomOutlinedIconButtonState extends State<CustomOutlinedIconButton> {
           margin: const EdgeInsets.all(6),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: widget.color ?? Color(0xFFD8DADC))),
+              border: Border.all(color: widget.color ?? const Color(0xFFD8DADC))),
           child: IconTheme(
-            data: IconThemeData(
+            data: const IconThemeData(
               color: Colors.black,
             ),
             child: widget.icon,

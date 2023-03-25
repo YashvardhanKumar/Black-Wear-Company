@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../routes/bottom nav bar screens/home page of e commerce/product_page.dart';
 import '../custom_icon_icons.dart';
-import '../custom_page_route.dart';
 import '../custom_text.dart';
 
 class ProductCard extends StatefulWidget {
@@ -90,7 +88,7 @@ class _ProductCardState extends State<ProductCard> {
                             Icons.star_rate_rounded,
                             color: Colors.yellow.shade800,
                           ),
-                          CustomText(
+                          const CustomText(
                             '4.5',
                             color: Color(0xff49454F),
                           )
@@ -98,7 +96,7 @@ class _ProductCardState extends State<ProductCard> {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   const CustomText(

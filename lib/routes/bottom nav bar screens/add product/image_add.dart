@@ -17,7 +17,7 @@ class _ImageAddPageState extends State<ImageAddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: CustomText(
           'Upload',
           fontWeight: FontWeight.w600,
@@ -32,36 +32,36 @@ class _ImageAddPageState extends State<ImageAddPage> {
               padding: const EdgeInsets.all(10.0),
               child: DottedBorder(
                 borderType: BorderType.RRect,
-                radius: Radius.circular(20),
-                dashPattern: [10, 8],
+                radius: const Radius.circular(20),
+                dashPattern: const [10, 8],
                 color: Colors.black,
                 strokeWidth: 2,
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   alignment: Alignment.center,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Material(
                         color: Colors.blue.shade50,
-                        shape: CircleBorder(),
-                        child: Padding(
-                          padding: const EdgeInsets.all(20),
+                        shape: const CircleBorder(),
+                        child: const Padding(
+                          padding: EdgeInsets.all(20),
                           child: Icon(
                             Icons.image_rounded,
                             size: 35,
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      CustomText(
+                      const CustomText(
                         'Upload your Image',
                         color: Colors.grey,
                         fontWeight: FontWeight.w600,
                       ),
-                      CustomText(
+                      const CustomText(
                         'Browse',
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -78,14 +78,14 @@ class _ImageAddPageState extends State<ImageAddPage> {
                   padding: const EdgeInsets.all(10.0),
                   child: DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(10),
-                    dashPattern: [10, 8],
+                    radius: const Radius.circular(10),
+                    dashPattern: const [10, 8],
                     color: Colors.grey.shade300,
                     strokeWidth: 2,
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       alignment: Alignment.center,
-                      child: Icon(
+                      child: const Icon(
                         Icons.add_rounded,
                         color: Colors.grey,
                         size: 30,
@@ -97,14 +97,14 @@ class _ImageAddPageState extends State<ImageAddPage> {
                   padding: const EdgeInsets.all(10.0),
                   child: DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(10),
-                    dashPattern: [10, 8],
+                    radius: const Radius.circular(10),
+                    dashPattern: const [10, 8],
                     color: Colors.grey.shade300,
                     strokeWidth: 2,
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       alignment: Alignment.center,
-                      child: SizedBox(
+                      child: const SizedBox(
                         height: 30,
                         width: 30,
                       ),
@@ -115,14 +115,14 @@ class _ImageAddPageState extends State<ImageAddPage> {
                   padding: const EdgeInsets.all(10.0),
                   child: DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(10),
-                    dashPattern: [10, 8],
+                    radius: const Radius.circular(10),
+                    dashPattern: const [10, 8],
                     color: Colors.grey.shade300,
                     strokeWidth: 2,
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       alignment: Alignment.center,
-                      child: SizedBox(
+                      child: const SizedBox(
                         height: 30,
                         width: 30,
                       ),
@@ -133,14 +133,14 @@ class _ImageAddPageState extends State<ImageAddPage> {
                   padding: const EdgeInsets.all(10.0),
                   child: DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(10),
-                    dashPattern: [10, 8],
+                    radius: const Radius.circular(10),
+                    dashPattern: const [10, 8],
                     color: Colors.grey.shade300,
                     strokeWidth: 2,
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       alignment: Alignment.center,
-                      child: SizedBox(
+                      child: const SizedBox(
                         height: 30,
                         width: 30,
                       ),
@@ -149,27 +149,27 @@ class _ImageAddPageState extends State<ImageAddPage> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            CustomTextField(
+            const CustomTextField(
               label: 'Title',
               hintText: 'Title of your NFT',
               required: true,
               maxLines: 1,
             ),
-            CustomTextField(
+            const CustomTextField(
               label: 'Description',
               hintText: 'Description of your NFT',
               maxLength: 250,
               maxLines: 6,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             CustomFilledButton(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
+              child: const Padding(
+                padding: EdgeInsets.all(16.0),
                 child: CustomText(
                   'Upload',
                   fontWeight: FontWeight.w600,
@@ -178,7 +178,7 @@ class _ImageAddPageState extends State<ImageAddPage> {
                 ),
               ),
               onPressed: () {
-                Navigator.push(context, CustomPageRoute(child: NFTAddSuccess()));
+                Navigator.push(context, CustomPageRoute(child: const NFTAddSuccess()));
               },
             )
           ],
@@ -226,7 +226,7 @@ class CustomTextField extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
               if (required)
-                CustomText(
+                const CustomText(
                   '*',
                   color: Colors.red,
                   fontWeight: FontWeight.w700,
@@ -242,7 +242,7 @@ class CustomTextField extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                offset: Offset(4, 4),
+                offset: const Offset(4, 4),
                 blurRadius: 20,
                 spreadRadius: 6,
                 color: Colors.grey.shade400.withOpacity(0.5),
@@ -259,7 +259,7 @@ class CustomTextField extends StatelessWidget {
                   TextStyle(fontFamily: 'Poppins', color: Colors.grey.shade400),
               isCollapsed: true,
               contentPadding:
-                  EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               border: InputBorder.none,
             ),
           ),

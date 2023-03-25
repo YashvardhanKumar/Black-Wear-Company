@@ -1,6 +1,5 @@
 import 'package:bfm/components/buttons/custom_chips.dart';
 import 'package:flutter/material.dart';
-import 'buttons/category_filter.dart';
 import 'cards/resent_search_tile.dart';
 import 'custom_text.dart';
 

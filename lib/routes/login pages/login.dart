@@ -3,7 +3,6 @@ import 'package:get_storage/get_storage.dart';
 import '../../../components/buttons/text_button.dart';
 import '../../../components/custom_page_route.dart';
 import '../bottom nav bar screens/common_home_page.dart';
-import '../bottom%20nav%20bar%20screens/home%20page%20of%20e%20commerce/home_page.dart';
 import 'package:bfm/routes/login%20pages/verify_number.dart';
 import 'package:flutter/material.dart';
 import '../../components/custom_app_bar.dart';
@@ -53,7 +52,6 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 box.write('isAnonymous', true);
                 box.write('isLogin', false);
-                print(box.changes);
                 Navigator.push(
                   context,
                   CustomPageRoute(child: const CommonPage()),
@@ -93,10 +91,10 @@ class _LoginPageState extends State<LoginPage> {
                     color: Color(0xFFD8DADC),
                     height: 0,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: Row(
-                      children: [
+                      children: const [
                         CustomText(
                           '🇮🇳',
                           fontSize: 18,

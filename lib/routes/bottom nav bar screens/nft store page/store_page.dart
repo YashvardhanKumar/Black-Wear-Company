@@ -1,6 +1,5 @@
 import 'package:bfm/components/buttons/custom_chips.dart';
 import 'package:bfm/components/buttons/search_button.dart';
-import 'package:bfm/components/buttons/text_button.dart';
 import 'package:bfm/components/custom_page_route.dart';
 import 'package:bfm/routes/bottom%20nav%20bar%20screens/nft%20store%20page/statistic_page.dart';
 import 'package:flutter/material.dart';
@@ -8,12 +7,8 @@ import '../../../components/buttons/icon_button.dart';
 import '../../../components/cards/live_bidding_tile.dart';
 import '../../../components/cards/normal_bidding_tile.dart';
 import '../../../components/cards/top_creator_card.dart';
-import '../../../components/buttons/category_filter.dart';
 import '../../../components/buttons/category_of_pref.dart';
-import '../../../components/custom_app_bar.dart';
-import '../../../components/custom_text.dart';
 import '../../../components/cards/suggestion_card.dart';
-import '../home page of e commerce/cart_page.dart';
 import '../home page of e commerce/home_page.dart';
 import 'favourites_page.dart';
 import 'live_bidding_page.dart';
@@ -99,7 +94,7 @@ class _StorePageState extends State<StorePage> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   // padding: const EdgeInsets.all(8.0),
-                  child: SearchBarButton(
+                  child: const SearchBarButton(
                     hintText: 'Search NFTs',
                     isNFTResults: true,
                   ),
@@ -117,7 +112,7 @@ class _StorePageState extends State<StorePage> {
                   icon: const Icon(Icons.insert_chart_outlined_rounded),
                   onPressed: () {
                     Navigator.push(
-                        context, CustomPageRoute(child: StatisticPage()));
+                        context, CustomPageRoute(child: const StatisticPage()));
                   },
                 ), //TODO: Cart Icon
                 CustomIconButton(
@@ -125,7 +120,7 @@ class _StorePageState extends State<StorePage> {
                   onPressed: () => Navigator.push(
                       context, CustomPageRoute(child: const FavouritesPage())),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 16,
                 )
               ],
@@ -153,12 +148,12 @@ class _StorePageState extends State<StorePage> {
                       context, CustomPageRoute(child: const LiveBiddingPage()));
                 },
               ),
-              const SingleChildScrollView(
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    children: [
+                    children: const [
                       LiveBiddingTile(
                         timeLeft: '4h 16m left',
                       ),
@@ -176,12 +171,12 @@ class _StorePageState extends State<StorePage> {
                 heading: 'Top Creator',
                 onSeeAllClicked: () {},
               ),
-              const SingleChildScrollView(
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    children: [
+                    children: const [
                       TopCreatorListCard(),
                       TopCreatorListCard(),
                       TopCreatorListCard(),
@@ -196,7 +191,7 @@ class _StorePageState extends State<StorePage> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                     children: [
                       NonLiveBiddingTile(onLiked: () {  }, isLiked: true,),
@@ -214,7 +209,7 @@ class _StorePageState extends State<StorePage> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Row(
                     children: [
                       NonLiveBiddingTile(onLiked: () {  }, isLiked: true,),

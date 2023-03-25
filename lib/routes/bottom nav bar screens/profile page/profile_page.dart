@@ -2,7 +2,6 @@ import 'package:bfm/components/buttons/text_button.dart';
 import 'package:bfm/components/cards/product_card.dart';
 import 'package:bfm/components/custom_icon_icons.dart';
 import 'package:flutter/material.dart';
-import '../../../components/bottom_sheets/nft_filter_bottom_sheet.dart';
 import '../../../components/buttons/custom_chips.dart';
 import '../../../components/buttons/icon_button.dart';
 import '../../../components/cards/normal_bidding_tile.dart';
@@ -10,7 +9,6 @@ import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_grid_view.dart';
 import '../../../components/custom_text.dart';
 import '../nft store page/nft_profile_page.dart';
-import '../nft store page/statistic_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -90,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                   child: Column(
                                     children: [
-                                      CustomText(
+                                      const CustomText(
                                         'Orders',
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -114,7 +112,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                   child: Column(
                                     children: [
-                                      CustomText(
+                                      const CustomText(
                                         'Revenue',
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -128,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           CustomOutlineButton(
@@ -206,7 +204,7 @@ class _ProfilePageState extends State<ProfilePage> {
             controller: controller,
             children: [
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: CustomGridView(
                   // isSliverType: true,
                   itemCount: 10,
@@ -221,7 +219,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: CustomGridView(
                   // isSliverType: true,
                   itemCount: 10,

@@ -12,7 +12,7 @@ class ShowStorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: CustomText('Display Store'),
       ),
       body: CustomGridView(

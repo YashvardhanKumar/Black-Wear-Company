@@ -1,4 +1,3 @@
-import 'package:bfm/components/custom_app_bar.dart';
 import 'package:bfm/components/custom_page_route.dart';
 import 'package:bfm/components/custom_text.dart';
 import 'package:bfm/routes/bottom%20nav%20bar%20screens/home%20page%20of%20e%20commerce/cart_page.dart';
@@ -6,7 +5,6 @@ import 'package:bfm/routes/intro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../components/buttons/custom_chips.dart';
-import '../../../components/buttons/icon_button.dart';
 import '../../../components/buttons/text_button.dart';
 import '../../../components/common_login_dialog_box.dart';
 
@@ -69,10 +67,10 @@ class _ProductPageState extends State<ProductPage> {
               backgroundColor: Colors.black54,
               elevation: 0,
               scrolledUnderElevation: 0,
-              leading: IconButton(onPressed: () {  }, icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,),),
-              title: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: const CustomText(
+              leading: IconButton(onPressed: () {  }, icon: const Icon(Icons.arrow_back_ios_new,color: Colors.white,),),
+              title: const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: CustomText(
                   'Product Name',
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
@@ -150,9 +148,9 @@ class _ProductPageState extends State<ProductPage> {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  const Row(
+                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       CustomText(
                         'Product Name',
                         fontWeight: FontWeight.w600,
@@ -172,11 +170,11 @@ class _ProductPageState extends State<ProductPage> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                             side: BorderSide(color: Colors.grey.shade300)),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
+                        child:  Padding(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 2.0, horizontal: 10),
                           child: Row(
-                            children: [
+                            children: const [
                               Icon(
                                 Icons.star_rate_rounded,
                                 size: 20,
@@ -237,8 +235,8 @@ class _ProductPageState extends State<ProductPage> {
                   ProductInfoCards(
                     expanded: true,
                     title: 'Product Specification',
-                    description: const Column(
-                      children: [
+                    description: Column(
+                      children: const [
                         BulletPointsText(
                             'Oversized fit - Super Loose On Body Thoda Hawa Aane De.'),
                         BulletPointsText(
@@ -250,8 +248,8 @@ class _ProductPageState extends State<ProductPage> {
                   ProductInfoCards(
                     expanded: false,
                     title: 'Return & Exchange',
-                    description: const Column(
-                      children: [
+                    description: Column(
+                      children: const [
                         BulletPointsText(
                             'Oversized fit - Super Loose On Body Thoda Hawa Aane De.'),
                         BulletPointsText(
@@ -263,8 +261,8 @@ class _ProductPageState extends State<ProductPage> {
                   ProductInfoCards(
                     expanded: false,
                     title: 'Manufactured By',
-                    description: const Column(
-                      children: [
+                    description: Column(
+                      children: const [
                         BulletPointsText(
                             'Oversized fit - Super Loose On Body Thoda Hawa Aane De.'),
                         BulletPointsText(
@@ -376,15 +374,15 @@ class _ProductPageState extends State<ProductPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Row(
+                             Row(
                               children: [
-                                CircleAvatar(),
+                                const CircleAvatar(),
                                 Padding(
-                                  padding: EdgeInsets.all(10.0),
+                                  padding: const EdgeInsets.all(10.0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: [
+                                    children: const [
                                       CustomText(
                                         'Arman Rokni',
                                         fontWeight: FontWeight.w600,

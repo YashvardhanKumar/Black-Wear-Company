@@ -117,10 +117,10 @@ class _ProductFilterPageState extends State<ProductFilterPage> {
       body: Container(
         height: size.height - kToolbarHeight - padding.vertical,
         decoration:
-            BoxDecoration(border: Border.symmetric(vertical: BorderSide())),
+            const BoxDecoration(border: Border.symmetric(vertical: BorderSide())),
         child: Column(
           children: [
-            Divider(
+            const Divider(
               height: 1.5,
               thickness: 1.5,
               color: Colors.grey,
@@ -143,7 +143,7 @@ class _ProductFilterPageState extends State<ProductFilterPage> {
                       ),
                     ),
                   ),
-                  VerticalDivider(
+                  const VerticalDivider(
                     width: 0,
                     thickness: 1.5,
                     color: Colors.grey,
@@ -157,7 +157,7 @@ class _ProductFilterPageState extends State<ProductFilterPage> {
                 ],
               ),
             ),
-            Divider(
+            const Divider(
               color: Colors.grey,
               height: 0,
               thickness: 1.5,
@@ -171,7 +171,7 @@ class _ProductFilterPageState extends State<ProductFilterPage> {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      CustomText(
+                      const CustomText(
                         '2,345',
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -186,8 +186,8 @@ class _ProductFilterPageState extends State<ProductFilterPage> {
                   ),
                   CustomFilledButton(
                     width: 150,
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(12.0),
                       child: CustomText(
                         'Apply',
                         fontWeight: FontWeight.w600,

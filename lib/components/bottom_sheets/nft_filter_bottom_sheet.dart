@@ -149,6 +149,7 @@ class _NFTFilterBottomSheetState extends State<NFTFilterBottomSheet> {
               Expanded(
                 flex: 3,
                 child: CustomFilledButton(
+                  onPressed: filtered.isEmpty ? null : () {},
                   child: const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: CustomText(
@@ -159,7 +160,6 @@ class _NFTFilterBottomSheetState extends State<NFTFilterBottomSheet> {
 
                     ),
                   ),
-                  onPressed: filtered.isEmpty ? null : () {},
                 ),
               ),
             ],

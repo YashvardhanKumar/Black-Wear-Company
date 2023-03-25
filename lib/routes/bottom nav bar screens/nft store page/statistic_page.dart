@@ -6,7 +6,6 @@ import 'package:bfm/routes/bottom%20nav%20bar%20screens/nft%20store%20page/nft_p
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../components/buttons/text_button.dart';
-import '../../../components/custom_app_bar.dart';
 
 class StatisticPage extends StatefulWidget {
   const StatisticPage({Key? key}) : super(key: key);
@@ -82,7 +81,7 @@ class _StatisticPageState extends State<StatisticPage> {
                   ),
                 ),
               ),
-              title: CustomText(
+              title: const CustomText(
                 'Statistic',
                 fontWeight: FontWeight.w600,
                 fontSize: 30,
@@ -138,7 +137,7 @@ class _StatisticPageState extends State<StatisticPage> {
               ],
             ),
             ListView(
-              children: [
+              children: const [
                 ActivityTile(
                     nftName: '3DMaps Cool #267',
                     userId: 'pedrogadelha',
@@ -203,10 +202,10 @@ class RankingTile extends StatelessWidget {
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundImage: AssetImage('images/cream3d.jpeg'),
                 radius: 30,
               ),
@@ -214,7 +213,7 @@ class RankingTile extends StatelessWidget {
           ),
           onTap: () {},
           title: Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -248,10 +247,10 @@ class RankingTile extends StatelessWidget {
           ),
           subtitle: CustomTextButton(
             onPressed: () {
-              Navigator.push(context, CustomPageRoute(child: NFTProfilePage()));
+              Navigator.push(context, CustomPageRoute(child: const NFTProfilePage()));
             },
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 5.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -312,7 +311,7 @@ class ActivityTile extends StatelessWidget {
           ),
           onTap: () {},
           title: Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -330,7 +329,7 @@ class ActivityTile extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: Colors.green,
                     ),
-                    Icon(
+                    const Icon(
                       CupertinoIcons.arrow_up_right,
                       color: Colors.green,
                       size: 14,
@@ -341,7 +340,7 @@ class ActivityTile extends StatelessWidget {
             ),
           ),
           subtitle: Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

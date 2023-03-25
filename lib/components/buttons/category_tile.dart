@@ -20,11 +20,11 @@ class CategoryTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 30,
             backgroundColor: Colors.black,
           ),
-          SizedBox(width: 10,),
+          const SizedBox(width: 10,),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

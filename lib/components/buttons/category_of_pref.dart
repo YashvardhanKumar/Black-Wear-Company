@@ -14,27 +14,10 @@ class CategoryOfPreference extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          CustomText(
-            heading,
-            fontWeight: FontWeight.w600,
-            fontSize: 18,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 00.0),
-            child: CustomTextButton(
-              onPressed: onSeeAllClicked,
-              child: const CustomText(
-                'See all',
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
-            ),
-          )
-        ],
+      child: CustomText(
+        heading,
+        fontWeight: FontWeight.w700,
+        fontSize: 26,
       ),
     );
   }

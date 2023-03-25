@@ -179,7 +179,7 @@ class NotificationTile extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,

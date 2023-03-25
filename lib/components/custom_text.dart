@@ -8,17 +8,20 @@ class CustomText extends Text {
     this.fontSize,
     this.color,
     this.height,
-    this.overflow,
-    this.maxLines,
-    this.textAlign,
+    super.overflow,
+    super.maxLines,
+    super.textAlign,
   }) : super(text);
   final FontWeight? fontWeight;
   final double? fontSize, height;
   final Color? color;
   final String text;
-  final TextOverflow? overflow;
-  final int? maxLines;
-  final TextAlign? textAlign;
+  // @override
+  // final TextOverflow? overflow;
+  // @override
+  // final int? maxLines;
+  // @override
+  // final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {

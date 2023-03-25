@@ -36,10 +36,10 @@ class _CommonPageState extends State<CommonPage> {
       body: SafeArea(
         bottom: false,
         child: [
-          HomePage(),
-          StorePage(),
-          NotificationPage(),
-          ProfilePage(),
+          const HomePage(),
+          const StorePage(),
+          const NotificationPage(),
+          const ProfilePage(),
         ][idx],
       ),
     );

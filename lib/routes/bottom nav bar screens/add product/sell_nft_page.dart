@@ -17,14 +17,14 @@ class SellNFTPage extends StatefulWidget {
 class _SellNFTPageState extends State<SellNFTPage> {
   final List<String> currencyType = ['ETH', 'All'];
   final List<Duration> expiryDate = [
-    Duration(days: 1),
-    Duration(days: 5),
-    Duration(days: 7),
-    Duration(days: 15)
+    const Duration(days: 1),
+    const Duration(days: 5),
+    const Duration(days: 7),
+    const Duration(days: 15)
   ];
 
   String selectedCurrency = 'ETH';
-  Duration selectedExpiry = Duration(days: 1);
+  Duration selectedExpiry = const Duration(days: 1);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
       );
     }
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: CustomText(
           'Sell',
           fontWeight: FontWeight.w600,
@@ -72,7 +72,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
-                      children: [
+                      children: const [
                         CustomText(
                           'Price',
                           fontSize: 16,
@@ -94,7 +94,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          offset: Offset(4, 4),
+                          offset: const Offset(4, 4),
                           blurRadius: 20,
                           spreadRadius: 6,
                           color: Colors.grey.shade400.withOpacity(0.5),
@@ -108,7 +108,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                               padding: const EdgeInsets.all(10.0),
                               child: Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     CustomIcon.ethereum,
                                     size: 22,
                                   ),
@@ -117,10 +117,10 @@ class _SellNFTPageState extends State<SellNFTPage> {
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
-                                  Icon(Icons.arrow_drop_down_rounded),
+                                  const Icon(Icons.arrow_drop_down_rounded),
                                 ],
                               ),
                             ),
@@ -129,13 +129,13 @@ class _SellNFTPageState extends State<SellNFTPage> {
                                 context: context,
                                 builder: (_) => SimpleDialog(
                                   backgroundColor: Colors.white,
-                                  title: CustomText('Select Currency Type'),
+                                  title: const CustomText('Select Currency Type'),
                                   children: currencyType
                                       .map(
                                         (e) => SimpleDialogOption(
                                           child: Row(
                                             children: [
-                                              Icon(
+                                              const Icon(
                                                 CustomIcon.ethereum,
                                                 size: 22,
                                               ),
@@ -171,7 +171,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                                   fontFamily: 'Poppins',
                                   color: Colors.grey.shade400),
                               isCollapsed: true,
-                              contentPadding: EdgeInsets.symmetric(
+                              contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 10),
                               border: InputBorder.none,
                             ),
@@ -191,7 +191,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
-                      children: [
+                      children: const [
                         CustomText(
                           'Expiration Date',
                           fontSize: 16,
@@ -214,7 +214,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          offset: Offset(4, 4),
+                          offset: const Offset(4, 4),
                           blurRadius: 20,
                           spreadRadius: 6,
                           color: Colors.grey.shade400.withOpacity(0.5),
@@ -233,7 +233,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                               fontSize: 18,
                               fontWeight: FontWeight.w500,
                             ),
-                            Icon(Icons.arrow_drop_down_rounded),
+                            const Icon(Icons.arrow_drop_down_rounded),
                           ],
                         ),
                       ),
@@ -242,7 +242,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                           context: context,
                           builder: (_) => SimpleDialog(
                             backgroundColor: Colors.white,
-                            title: CustomText('Select Currency Type'),
+                            title: const CustomText('Select Currency Type'),
                             children: expiryDate
                                 .map(
                                   (e) => SimpleDialogOption(
@@ -263,7 +263,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                       },
                     ),
                   ),
-                  SizedBox(height: 40,),
+                  const SizedBox(height: 40,),
                   CustomFilledButton(
                     width: double.infinity,
                     child: const Padding(
@@ -273,7 +273,7 @@ class _SellNFTPageState extends State<SellNFTPage> {
                     ),
                     onPressed: () {
                       Navigator.push(
-                          context, CustomPageRoute(child: SellPriceAddedSuccess()));
+                          context, CustomPageRoute(child: const SellPriceAddedSuccess()));
                     },
                   ),
                 ],

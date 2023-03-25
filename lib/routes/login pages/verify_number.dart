@@ -273,7 +273,6 @@ class _VerifyNumberPageState extends State<VerifyNumberPage> {
         c4.clear();
         c5.clear();
       } else {
-        print(box.changes);
         errorText = null;
         setState(() {});
         box.write('isLogin', true);

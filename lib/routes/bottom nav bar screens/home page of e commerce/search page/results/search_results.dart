@@ -46,7 +46,7 @@ class _SearchResultsPageState extends State<SearchResultsPage> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: CustomGridView(
             itemCount: 10,
             itemBuilder: (context, i) {

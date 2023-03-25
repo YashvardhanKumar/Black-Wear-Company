@@ -5,9 +5,6 @@ import 'package:flutter/services.dart';
 import '../../routes/bottom nav bar screens/home page of e commerce/search page/results/search_results.dart';
 import '../../routes/bottom nav bar screens/nft store page/nft_search_result_page.dart';
 import '../bottom_sheets/nft_filter_bottom_sheet.dart';
-import '../buttons/custom_chips.dart';
-import '../buttons/text_button.dart';
-import '../custom_text.dart';
 import '../search_bar.dart';
 
 import '../custom_app_bar.dart';
@@ -49,7 +46,6 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(searchClicked);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,

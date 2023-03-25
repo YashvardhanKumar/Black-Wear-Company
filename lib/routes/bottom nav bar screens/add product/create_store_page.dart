@@ -37,7 +37,7 @@ class _CreateStorePageState extends State<CreateStorePage> {
         title: (isLoading) ? null : CustomText((selected.isEmpty) ? 'Create your Store': '${selected.length} Selected'),
       ),
       body: (isLoading)
-          ? CreateStoreProgressPage()
+          ? const CreateStoreProgressPage()
           : CustomGridView(
               itemCount: 10,
               itemBuilder: (_, i) {
@@ -67,18 +67,18 @@ class _CreateStorePageState extends State<CreateStorePage> {
                             return;
                           }
                           Navigator.push(
-                              context, CustomPageRoute(child: ProductPage()));
+                              context, CustomPageRoute(child: const ProductPage()));
                         }
                       },
                     ),
                     if (selected.contains(i))
                       Container(
                         // alignment: Alignment.center,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: CircleAvatar(
                           backgroundColor: Colors.green.withOpacity(0.1),
                           radius: 30,
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 20,
                             backgroundColor: Colors.green,
                             child: Icon(
@@ -95,28 +95,26 @@ class _CreateStorePageState extends State<CreateStorePage> {
             ),
       // extendBody: true,
       bottomNavigationBar: (!isLoading)
-          ? Container(
-              child: BottomSheet(
-                backgroundColor: Colors.white,
-                onClosing: () {},
-                builder: (_) => Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: CustomFilledButton(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: CustomText(
-                        'Create',
-                        color: Colors.white,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    onPressed: (selected.isEmpty) ? null : () {
-                      Navigator.push(context, CustomPageRoute(child: StoreCreatedSuccess()));
-                    },
+          ? BottomSheet(
+            backgroundColor: Colors.white,
+            onClosing: () {},
+            builder: (_) => Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: CustomFilledButton(
+                onPressed: (selected.isEmpty) ? null : () {
+                  Navigator.push(context, CustomPageRoute(child: const StoreCreatedSuccess()));
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: CustomText(
+                    'Create',
+                    color: Colors.white,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
-            )
+            ),
+          )
           : null,
     );
   }
@@ -142,11 +140,11 @@ class CreateStoreProgressPage extends StatelessWidget {
               height: size.width,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: CustomText(

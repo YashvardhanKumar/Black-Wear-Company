@@ -13,7 +13,7 @@ class LiveBiddingTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // height: 30,
       width: 190,
       child: Column(
@@ -52,7 +52,7 @@ class LiveBiddingTile extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.push(
-                        context, CustomPageRoute(child: ShowBidProduct()));
+                        context, CustomPageRoute(child: const ShowBidProduct()));
                   },
                 )
               ],

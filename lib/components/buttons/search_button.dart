@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../routes/bottom nav bar screens/home page of e commerce/cart_page.dart';
 import '../page_as_components/search_page.dart';
 import '../custom_page_route.dart';
 import '../custom_text.dart';
@@ -42,16 +41,16 @@ class SearchBarButton extends StatelessWidget {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(13.0),
+                    padding: const EdgeInsets.all(13.0),
                     child: CustomText(
                       hintText,
-                      color: Color(0xff49454F),
+                      color: const Color(0xff49454F),
                       fontSize: 16,
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
+                const Padding(
+                  padding: EdgeInsets.all(12.0),
                   child: Icon(
                     Icons.search_rounded,
                     color: Color(0xff49454F),

@@ -21,11 +21,11 @@ class BidSuccessPage extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Image.asset('images/thumbsup.png'),
             ),
-            const Padding(
-              padding: EdgeInsets.all(10.0),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: const [
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: CustomText(

@@ -4,9 +4,7 @@ import '../../../components/buttons/text_button.dart';
 import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_page_route.dart';
 import '../../../components/custom_text.dart';
-import 'create_store_page.dart';
 import 'show_store_page.dart';
-import 'view_link.dart';
 
 class StoreCreatedSuccess extends StatelessWidget {
   const StoreCreatedSuccess({Key? key}) : super(key: key);
@@ -15,7 +13,7 @@ class StoreCreatedSuccess extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       body: ListView(
         children: [
           Container(
@@ -26,7 +24,7 @@ class StoreCreatedSuccess extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: Colors.lightBlue.shade50,
               radius: 80,
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 radius: 50,
                 backgroundColor: Colors.green,
                 child: Icon(
@@ -37,11 +35,11 @@ class StoreCreatedSuccess extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: CustomText(
@@ -85,7 +83,7 @@ class StoreCreatedSuccess extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                CustomPageRoute(child: ShowStorePage()),
+                CustomPageRoute(child: const ShowStorePage()),
               );
             },
           ),

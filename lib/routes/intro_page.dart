@@ -37,7 +37,7 @@ class _IntroPageState extends State<IntroPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    EdgeInsets padding = MediaQuery.paddingOf(context);
+    EdgeInsets padding = MediaQuery.of(context).viewPadding;
     double height = size.height - padding.vertical;
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -45,7 +45,7 @@ class _IntroPageState extends State<IntroPage> {
         isTransparent: true,
         leading: CustomOutlinedIconButton(
           color: Colors.black,
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             size: 18,
           ),
@@ -65,9 +65,9 @@ class _IntroPageState extends State<IntroPage> {
           CustomTextButton(
             onPressed: () {
               Navigator.push(
-                  context, CustomPageRoute(child: LoginPage()));
+                  context, CustomPageRoute(child: const LoginPage()));
             },
-            child: CustomText(
+            child: const CustomText(
               'Skip',
               color: Colors.black,
               fontSize: 18,
@@ -78,7 +78,7 @@ class _IntroPageState extends State<IntroPage> {
       body: Container(
         height: size.height,
         width: size.width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('images/bgIntro.webp'), fit: BoxFit.fill)),
         child: Padding(
@@ -106,7 +106,7 @@ class _IntroPageState extends State<IntroPage> {
           color: Colors.white,
         ),
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -128,13 +128,13 @@ class _IntroPageState extends State<IntroPage> {
                   itemCount: 3,
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               DotIndicator(nextClickedNo: nextClickedNo, itemCount: 3,),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               CustomFilledButton(
                 padding: const EdgeInsets.all(15.0),
                 width: double.infinity,
-                child: CustomText(
+                child: const CustomText(
                   'Next',
                   color: Colors.white,
                 ),
@@ -148,7 +148,7 @@ class _IntroPageState extends State<IntroPage> {
                   } else if (nextClickedNo == 3) {
                     Navigator.push(
                       context,
-                      CustomPageRoute(child: LoginPage()),
+                      CustomPageRoute(child: const LoginPage()),
                     );
                   }
                   setState(() {});
@@ -217,7 +217,7 @@ class IntroTextsSlider extends StatelessWidget {
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         CustomText(

@@ -38,13 +38,13 @@ class _FavouritesPageState extends State<FavouritesPage> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: NonLiveBiddingTile(onLiked: () {  }, isLiked: i%2 == 0,),
                   ),
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: NonLiveBiddingTile(onLiked: () {  }, isLiked: i%2 == 0,),
                   ),
                 ),

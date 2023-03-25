@@ -2,9 +2,7 @@ import 'package:bfm/components/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../components/buttons/text_button.dart';
-import '../../../components/custom_page_route.dart';
 import '../../../components/custom_text.dart';
-import 'sell_nft_page.dart';
 
 class ViewLink extends StatelessWidget {
   const ViewLink({Key? key}) : super(key: key);
@@ -12,7 +10,7 @@ class ViewLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
@@ -22,11 +20,11 @@ class ViewLink extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Image.asset('images/key.png'),
             ),
-            const Padding(
-              padding: EdgeInsets.all(10.0),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: const [
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: CustomText(
@@ -71,11 +69,11 @@ class ViewLink extends StatelessWidget {
                           padding: const EdgeInsets.all(10.0),
                           child: CustomOutlineButton(
                             // width: double.infinity,
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 12),
                               child: Row(
-                                children: [
+                                children: const [
                                   CustomText(
                                     'Copy Link',
                                     fontWeight: FontWeight.w600,
@@ -94,11 +92,11 @@ class ViewLink extends StatelessWidget {
                           padding: const EdgeInsets.all(10.0),
                           child: CustomOutlineButton(
                             // width: double.infinity,
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 12),
                               child: Row(
-                                children: [
+                                children: const [
                                   CustomText(
                                     'QR Code',
                                     fontWeight: FontWeight.w600,
@@ -121,13 +119,13 @@ class ViewLink extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(10)),
                                   actions: [
                                     FilledButton(
-                                      child: CustomText('OK'),
                                       style: FilledButton.styleFrom(
                                         backgroundColor: Colors.black,
                                       ),
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
+                                      child: const CustomText('OK'),
                                     ),
                                   ],
                                 ),

@@ -1,7 +1,6 @@
 import 'package:bfm/components/cards/normal_bidding_tile.dart';
 import 'package:flutter/material.dart';
 import '../../../components/buttons/custom_chips.dart';
-import '../../../components/cards/product_card.dart';
 import '../../../components/custom_grid_view.dart';
 import '../../../components/custom_text.dart';
 
@@ -100,7 +99,7 @@ class _NFTSearchResultPageState extends State<NFTSearchResultPage> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: CustomGridView(
             itemCount: 10,
             itemBuilder: (_, i) => NonLiveBiddingTile(
