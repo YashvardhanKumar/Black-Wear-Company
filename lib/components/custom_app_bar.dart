@@ -36,7 +36,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       // SystemChrome.restoreSystemUIOverlays();
     }
     return AppBar(
-      toolbarHeight: toolbarHeight ?? 70,
+      toolbarHeight: toolbarHeight ?? 55,
       titleSpacing: 0,
       elevation: 0,
       scrolledUnderElevation: 0,

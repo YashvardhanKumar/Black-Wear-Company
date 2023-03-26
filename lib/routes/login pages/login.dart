@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.white,
       appBar: CustomAppBar(
         actions: [
-          if (!box.read('isAnonymous')!)
+          if (!(box.read('isAnonymous') ?? false))
             CustomTextButton(
               child: const Padding(
                 padding: EdgeInsets.all(8.0),

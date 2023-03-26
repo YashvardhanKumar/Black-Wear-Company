@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return [
             SliverAppBar(
-              toolbarHeight: 70,
+              toolbarHeight: 50,
               // snap: true,
               // floating: true,
               pinned: true,
@@ -84,16 +84,17 @@ class _HomePageState extends State<HomePage> {
               // stretch: true,
               surfaceTintColor: Colors.transparent,
               backgroundColor: Colors.white,
-              titleSpacing: 20,
+              titleSpacing: 10,
+              collapsedHeight: 55,
               leadingWidth: 0,
               leading: Container(),
-              expandedHeight: 140,
+              expandedHeight: 105,
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(0),
                 child: Container(
-                  height: 70,
+                  height: 55,
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   // padding: const EdgeInsets.all(8.0),
                   child: const SearchBarButton(
                     hintText: 'Search Products',
@@ -154,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 const SizedBox(
-                  width: 16,
+                  width: 6,
                 )
               ],
             ),
@@ -711,11 +712,11 @@ class ConnectWallet extends StatelessWidget {
     return CustomOutlineButton(
       onPressed: onPressed,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(5.0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: const [
-            Icon(Icons.wallet),
+            Icon(Icons.wallet, size: 20,),
             SizedBox(
               width: 5,
             ),

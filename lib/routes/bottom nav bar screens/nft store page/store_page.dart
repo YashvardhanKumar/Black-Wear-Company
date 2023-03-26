@@ -75,7 +75,7 @@ class _StorePageState extends State<StorePage> {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return [
             SliverAppBar(
-              toolbarHeight: 70,
+              toolbarHeight: 50,
               // snap: true,
               // floating: true,
               pinned: true,
@@ -86,11 +86,12 @@ class _StorePageState extends State<StorePage> {
               titleSpacing: 20,
               leadingWidth: 0,
               leading: Container(),
-              expandedHeight: 140,
+              collapsedHeight: 55,
+              expandedHeight: 105,
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(0),
                 child: Container(
-                  height: 70,
+                  height: 55,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   // padding: const EdgeInsets.all(8.0),
@@ -129,6 +130,7 @@ class _StorePageState extends State<StorePage> {
         },
         body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

@@ -67,7 +67,7 @@ class CustomChipsState extends State<CustomChips> {
             ),
             child: Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+              const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [

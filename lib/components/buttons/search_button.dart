@@ -41,18 +41,19 @@ class SearchBarButton extends StatelessWidget {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(13.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: CustomText(
                       hintText,
                       color: const Color(0xff49454F),
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Icon(
                     Icons.search_rounded,
+                    size: 20,
                     color: Color(0xff49454F),
                   ),
                 ),

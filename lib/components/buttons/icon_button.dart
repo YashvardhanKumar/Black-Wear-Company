@@ -35,8 +35,8 @@ class _CustomIconButtonState extends State<CustomIconButton> {
           setState(() {});
         },
         child: Container(
-          height: 45,
-          width: 45,
+          height: 40,
+          width: 40,
           alignment: Alignment.center,
           // padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.symmetric(horizontal: 4),

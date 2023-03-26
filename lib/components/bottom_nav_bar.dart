@@ -63,15 +63,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
+      height: 60,
       width: double.infinity,
-      padding: const EdgeInsets.all(15),
+      // padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.black.withOpacity(0.07)),
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
+        // borderRadius: const BorderRadius.vertical(
+        //   top: Radius.circular(20),
+        // ),
         // color: Colors.red
       ),
       child: Row(
@@ -119,7 +119,7 @@ class _BottomNavItemState extends State<BottomNavItem> {
         },
         child: Container(
           width: 50,
-          height: 40,
+          height: 35,
           // padding: EdgeInsets.all(10),
           // margin: EdgeInsets.all(10),
           decoration: BoxDecoration(
@@ -204,7 +204,7 @@ class _CustomFABState extends State<CustomFAB> {
           Positioned(
             right: 1,
             left: 1,
-            bottom: size.height,
+            bottom: size.height - 20,
             child: buildOverlay(),
           ),
         ],
@@ -224,8 +224,8 @@ class _CustomFABState extends State<CustomFAB> {
                 child: Material(
                   shape: const CircleBorder(),
                   child: IconButton(
-                    padding: const EdgeInsets.all(20),
-                    icon: const Icon(Icons.image_rounded, size: 30,),
+                    padding: const EdgeInsets.all(10),
+                    icon: const Icon(Icons.image_rounded, size: 25,),
                     onPressed: () {
                       entry!.remove();
                       Navigator.push(context, CustomPageRoute(child: const ImageAddPage()));
@@ -239,8 +239,8 @@ class _CustomFABState extends State<CustomFAB> {
                 child: Material(
                   shape: const CircleBorder(),
                   child: IconButton(
-                    padding: const EdgeInsets.all(20),
-                    icon: const Icon(Icons.videocam_rounded, size: 30,),
+                    padding: const EdgeInsets.all(10),
+                    icon: const Icon(Icons.videocam_rounded, size: 25,),
                     onPressed: () {
                       entry!.remove();
                       Navigator.push(context, CustomPageRoute(child: const VideoAddPage()));
@@ -250,14 +250,14 @@ class _CustomFABState extends State<CustomFAB> {
               ),
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          // const SizedBox(
+          //   height: 0,
+          // ),
           Material(
             shape: const StadiumBorder(),
             color: Colors.black54,
-            child: TextButton(
-              child: const Icon(
+            child: IconButton(
+              icon: const Icon(
                 Icons.close_rounded,
                 color: Colors.white,
               ),
@@ -292,7 +292,7 @@ class _CustomFABState extends State<CustomFAB> {
         },
         child: Container(
           width: 50,
-          height: 40,
+          height: 35,
           // padding: EdgeInsets.all(10),
           // margin: EdgeInsets.all(10),
           decoration: BoxDecoration(
