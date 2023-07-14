@@ -29,11 +29,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
     List<Widget> items = [];
     List<IconData> iconDataList = [
       Icons.home_rounded,
-      Icons.shopping_bag_outlined,
+      // Icons.shopping_bag_outlined,
       Icons.notifications_none_rounded,
       Icons.person_rounded,
     ];
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 3; i++) {
       items.add(
         BottomNavItem(
           icon: Icon(iconDataList[i]),
@@ -46,7 +46,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           notifications: i == 4 ? 3 : null,
         ),
       );
-      if (i == 1) {
+      if (i == 0) {
         items.add(
           CustomFAB(
             icon: const Icon(

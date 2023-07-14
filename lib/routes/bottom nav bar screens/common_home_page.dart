@@ -37,7 +37,7 @@ class _CommonPageState extends State<CommonPage> {
         bottom: false,
         child: [
           const HomePage(),
-          const StorePage(),
+          // const StorePage(),
           const NotificationPage(),
           const ProfilePage(),
         ][idx],
